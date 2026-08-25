@@ -4,10 +4,10 @@
 
 ## Products
 
-- **SIMBOX Rally (SB-R1)** — all-in-one plug-in rally cockpit: MOZA R5 Direct Drive wheel, load-cell pedals, handbrake, Playseat racing seat, 39" curved OLED display, gaming PC, soundbar. Dimensions in use: 119–176 × 65.5 × 93.5 cm. Flight case: 193.5 × 99.5 × 124 cm (194.5 × 101.5 × 139 cm with dolly), 240 kg.
+- **SIMBOX Rally (SB-R1)** — all-in-one plug-in rally cockpit: MOZA R5 Direct Drive wheel, load-cell pedals, handbrake, Playseat racing seat, 39" curved OLED display, gaming PC, soundbar. Dimensions in use: 119–176 × 65.5 × 93.5 cm. Flight case: 193.5 × 99.5 × 124 cm (194.5 × 101.5 × 139 cm with dolly), 250 kg.
 - **SIMBOX F1** — formula-style plug-in racing cockpit for events.
-- **SIMBOX Motion (SB-M1)** — full-motion racing simulator on a DOF Reality 6-DOF motion platform with Sparco PRO 2000 seat. Flight case: 168.5 × 97.5 × 136 cm (151.5 cm high with dolly), 260 kg.
-- **SIMBOX Flight (SB-F1)** — full-motion flight simulator: 6-DOF platform, HOTAS throttle and stick, rudder pedals. Flight case: 169 × 98 × 137 cm (149.5 cm high with dolly), 270 kg.
+- **SIMBOX Motion (SB-M1)** — full-motion racing simulator on a DOF Reality 6-DOF motion platform with Sparco PRO 2000 seat. Flight case: 168.5 × 97.5 × 136 cm (151.5 cm high with dolly), 270 kg.
+- **SIMBOX Flight (SB-F1)** — full-motion flight simulator: 6-DOF platform, HOTAS throttle and stick, rudder pedals. Flight case: 169 × 98 × 137 cm (149.5 cm high with dolly), 280 kg.
 
 All configurations are fully customizable — components can be swapped or upgraded to match the event and budget.
 
