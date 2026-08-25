@@ -1,0 +1,1601 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>SIMBOXPRO — Plug-in Racing & Flight Simulators for Events</title>
+<meta name="description" content="SIMBOXPRO builds complete plug-in simulators for trade fairs and events: SIMBOX Rally, F1, Motion and Flight. Packed in a concert-grade flight case — plug in the power and play. Custom branding and EFL leasing available.">
+<link rel="canonical" href="https://simboxpro.com/">
+<link rel="icon" type="image/svg+xml" href="images/favicon.svg">
+<link rel="apple-touch-icon" href="images/logo-512.png">
+<meta name="theme-color" content="#0a0c0e">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://simboxpro.com/">
+<meta property="og:site_name" content="SIMBOXPRO">
+<meta property="og:title" content="SIMBOXPRO — Plug-in Racing & Flight Simulators for Events">
+<meta property="og:description" content="Complete event-ready simulators in a flight case: Rally, F1, Motion, Flight. Plug in the power and play. Custom branding, leasing via EFL.">
+<meta property="og:image" content="https://simboxpro.com/images/og-image.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SIMBOXPRO — Plug-in Racing & Flight Simulators for Events">
+<meta name="twitter:description" content="Complete event-ready simulators in a flight case: Rally, F1, Motion, Flight. Plug in the power and play.">
+<meta name="twitter:image" content="https://simboxpro.com/images/og-image.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdn.jsdelivr.net">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<script type="module" src="https://cdn.jsdelivr.net/npm/@google/model-viewer@3.5.0/dist/model-viewer.min.js"></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "https://simboxpro.com/#org",
+      "name": "SIMBOXPRO",
+      "url": "https://simboxpro.com/",
+      "logo": "https://simboxpro.com/images/logo-512.png",
+      "email": "contact@simboxpro.com",
+      "telephone": "+48 608 662 334",
+      "description": "SIMBOXPRO designs and builds complete plug-in racing and flight simulators for trade fairs, brand activations and sim racing events. Made in Poland.",
+      "address": { "@type": "PostalAddress", "addressCountry": "PL" }
+    },
+    {
+      "@type": "WebSite",
+      "@id": "https://simboxpro.com/#website",
+      "url": "https://simboxpro.com/",
+      "name": "SIMBOXPRO",
+      "publisher": { "@id": "https://simboxpro.com/#org" }
+    },
+    {
+      "@type": "Product",
+      "name": "SIMBOX Rally",
+      "sku": "SB-R1",
+      "brand": { "@id": "https://simboxpro.com/#org" },
+      "image": "https://simboxpro.com/images/hero.webp",
+      "description": "All-in-one plug-in rally simulator packed in a concert-grade flight case. MOZA R5 Direct Drive wheel, load-cell pedals, handbrake, Playseat racing seat, 39-inch curved OLED display and a gaming PC. Setup takes minutes: plug in the power and play. Dimensions in use: 119–176 × 65.5 × 93.5 cm. Fully customizable configuration and branding.",
+      "countryOfOrigin": "PL"
+    },
+    {
+      "@type": "Product",
+      "name": "SIMBOX F1",
+      "sku": "SB-X1",
+      "brand": { "@id": "https://simboxpro.com/#org" },
+      "description": "Formula-style plug-in racing simulator for events, with single-seater cockpit position, Direct Drive wheel and curved display. Fully customizable configuration and branding.",
+      "countryOfOrigin": "PL"
+    },
+    {
+      "@type": "Product",
+      "name": "SIMBOX Motion",
+      "sku": "SB-M1",
+      "brand": { "@id": "https://simboxpro.com/#org" },
+      "image": "https://simboxpro.com/images/model-motion.webp",
+      "description": "Full-motion racing simulator built on a DOF Reality 6-DOF motion platform with Sparco PRO 2000 racing seat, Direct Drive wheel and curved display. Feels every bump, drift and jump. Fully customizable configuration and branding.",
+      "countryOfOrigin": "PL"
+    },
+    {
+      "@type": "Product",
+      "name": "SIMBOX Flight",
+      "sku": "SB-F1",
+      "brand": { "@id": "https://simboxpro.com/#org" },
+      "image": "https://simboxpro.com/images/model-flight.webp",
+      "description": "Full-motion flight simulator for events: 6-DOF motion platform, HOTAS throttle and stick, rudder pedals and curved display. From airliners to fighter jets. Fully customizable configuration and branding.",
+      "countryOfOrigin": "PL"
+    }
+  ]
+}
+</script>
+<style>
+  :root {
+    --bg: #0a0c0e;
+    --bg-soft: #101317;
+    --bg-card: #14181d;
+    --line: rgba(255, 255, 255, 0.08);
+    --text: #e8ecf1;
+    --text-dim: #9aa4b0;
+    --accent: #e8236d;
+    --accent-soft: rgba(232, 35, 109, 0.12);
+    --radius: 18px;
+    --font-head: "Space Grotesk", sans-serif;
+    --font-body: "Inter", sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  ::selection { background: var(--accent); color: #fff; }
+
+  .wrap { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+  h1, h2, h3 { font-family: var(--font-head); font-weight: 600; line-height: 1.15; }
+
+  /* ---------- reveal animation ---------- */
+  .reveal {
+    opacity: 0;
+    transform: translateY(28px);
+    transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .reveal.visible { opacity: 1; transform: none; }
+  .reveal.d1 { transition-delay: 0.1s; }
+  .reveal.d2 { transition-delay: 0.2s; }
+  .reveal.d3 { transition-delay: 0.3s; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .reveal { opacity: 1; transform: none; transition: none; }
+    html { scroll-behavior: auto; }
+  }
+
+  /* ---------- nav ---------- */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(10, 12, 14, 0.72);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+    border-bottom: 1px solid transparent;
+    transition: border-color 0.4s;
+  }
+  nav.scrolled { border-bottom-color: var(--line); }
+  .nav-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 68px;
+  }
+  .brand {
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: 1.05rem;
+    letter-spacing: 0.14em;
+    color: var(--text);
+    text-decoration: none;
+  }
+  .brand span { color: var(--accent); }
+  .nav-links { display: flex; gap: 30px; align-items: center; }
+  .nav-links a {
+    color: var(--text-dim);
+    text-decoration: none;
+    font-size: 0.86rem;
+    font-weight: 500;
+    letter-spacing: 0.04em;
+    transition: color 0.25s;
+  }
+  .nav-links a:hover { color: var(--text); }
+  .nav-cta {
+    padding: 9px 20px;
+    border: 1px solid var(--accent);
+    border-radius: 100px;
+    color: var(--accent) !important;
+    transition: background 0.25s, color 0.25s !important;
+  }
+  .nav-cta:hover { background: var(--accent); color: #fff !important; }
+  @media (max-width: 720px) { .nav-links a:not(.nav-cta) { display: none; } }
+
+  /* ---------- hero ---------- */
+  .hero {
+    position: relative;
+    padding: 150px 0 60px;
+    text-align: center;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: -300px; left: 50%;
+    transform: translateX(-50%);
+    width: 1100px; height: 700px;
+    background: radial-gradient(ellipse at center, rgba(232, 35, 109, 0.13), transparent 65%);
+    pointer-events: none;
+  }
+  .eyebrow {
+    display: inline-block;
+    font-size: 0.76rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: var(--accent-soft);
+    border: 1px solid rgba(232, 35, 109, 0.25);
+    padding: 7px 18px;
+    border-radius: 100px;
+    margin-bottom: 26px;
+  }
+  .hero h1 {
+    font-size: clamp(2.4rem, 6vw, 4.4rem);
+    letter-spacing: -0.02em;
+    max-width: 850px;
+    margin: 0 auto 20px;
+  }
+  .hero h1 em { font-style: normal; color: var(--accent); }
+  .hero p.lead {
+    max-width: 560px;
+    margin: 0 auto 36px;
+    color: var(--text-dim);
+    font-size: 1.06rem;
+  }
+  .hero-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; margin-bottom: 30px; }
+  .btn {
+    display: inline-block;
+    font-family: var(--font-head);
+    font-weight: 600;
+    font-size: 0.95rem;
+    letter-spacing: 0.03em;
+    text-decoration: none;
+    padding: 14px 34px;
+    border-radius: 100px;
+    transition: transform 0.25s, box-shadow 0.25s, background 0.25s, border-color 0.25s;
+  }
+  .btn-primary {
+    background: var(--accent);
+    color: #fff;
+    box-shadow: 0 8px 30px rgba(232, 35, 109, 0.3);
+  }
+  .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 38px rgba(232, 35, 109, 0.42); }
+  .btn-ghost {
+    color: var(--text);
+    border: 1px solid var(--line);
+  }
+  .btn-ghost:hover { border-color: rgba(255, 255, 255, 0.3); transform: translateY(-2px); }
+
+  .hero-img {
+    max-width: 980px;
+    margin: 10px auto 0;
+    position: relative;
+  }
+  .hero-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 40px 60px rgba(0, 0, 0, 0.6));
+    animation: heroFloat 7s ease-in-out infinite;
+  }
+  @keyframes heroFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  @media (prefers-reduced-motion: reduce) { .hero-img img { animation: none; } }
+
+  /* ---------- stats strip ---------- */
+  .stats {
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    background: var(--bg-soft);
+  }
+  .stats-inner {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+  }
+  .stat {
+    padding: 34px 20px;
+    text-align: center;
+  }
+  .stat + .stat { border-left: 1px solid var(--line); }
+  .stat .num {
+    font-family: var(--font-head);
+    font-size: 1.7rem;
+    font-weight: 700;
+    color: var(--text);
+  }
+  .stat .num span { color: var(--accent); }
+  .stat .label {
+    margin-top: 4px;
+    font-size: 0.78rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+  }
+  @media (max-width: 720px) {
+    .stats-inner { grid-template-columns: repeat(2, 1fr); }
+    .stat:nth-child(3) { border-left: none; }
+    .stat:nth-child(3), .stat:nth-child(4) { border-top: 1px solid var(--line); }
+  }
+
+  /* ---------- sections ---------- */
+  section { padding: 110px 0; }
+  .sec-head { max-width: 640px; margin-bottom: 60px; }
+  .sec-head.center { margin-left: auto; margin-right: auto; text-align: center; }
+  .sec-tag {
+    font-size: 0.76rem;
+    font-weight: 600;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 14px;
+  }
+  .sec-head h2 { font-size: clamp(1.8rem, 4vw, 2.6rem); letter-spacing: -0.01em; margin-bottom: 16px; }
+  .sec-head p { color: var(--text-dim); }
+
+  /* ---------- features ---------- */
+  .features {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  .feature {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 34px 28px;
+    transition: transform 0.35s, border-color 0.35s;
+  }
+  .feature:hover { transform: translateY(-6px); border-color: rgba(232, 35, 109, 0.35); }
+  .feature .icon {
+    width: 46px; height: 46px;
+    border-radius: 12px;
+    background: var(--accent-soft);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+  .feature .icon svg { width: 22px; height: 22px; stroke: var(--accent); }
+  .feature h3 { font-size: 1.08rem; margin-bottom: 10px; }
+  .feature p { font-size: 0.9rem; color: var(--text-dim); }
+  @media (max-width: 980px) { .features { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .features { grid-template-columns: 1fr; } }
+
+  /* ---------- spec ---------- */
+  #spec { background: var(--bg-soft); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .spec-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 70px;
+    align-items: center;
+  }
+  .spec-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+    filter: drop-shadow(0 30px 50px rgba(0, 0, 0, 0.5));
+  }
+  .spec-table { width: 100%; border-collapse: collapse; }
+  .spec-table td {
+    padding: 13px 0;
+    border-bottom: 1px solid var(--line);
+    font-size: 0.93rem;
+  }
+  .spec-table td:first-child { color: var(--text-dim); padding-right: 20px; white-space: nowrap; }
+  .spec-table td:last-child { text-align: right; font-weight: 500; }
+  .spec-note { margin-top: 14px; font-size: 0.78rem; color: var(--text-dim); opacity: 0.7; }
+  @media (max-width: 900px) { .spec-grid { grid-template-columns: 1fr; gap: 40px; } }
+
+  /* ---------- included ---------- */
+  .included-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+  .included-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 15px 18px;
+    font-size: 0.92rem;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+  .included-item:hover { border-color: rgba(232, 35, 109, 0.35); transform: translateY(-3px); }
+  .included-item svg { width: 17px; height: 17px; stroke: var(--accent); flex-shrink: 0; }
+  @media (max-width: 900px) { .included-list { grid-template-columns: repeat(2, 1fr); } }
+  @media (max-width: 560px) { .included-list { grid-template-columns: 1fr; } }
+
+  /* ---------- gallery ---------- */
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-auto-rows: 230px;
+    gap: 16px;
+  }
+  .g-item {
+    position: relative;
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--line);
+    background: var(--bg-card);
+  }
+  .g-item img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  .g-item:hover img { transform: scale(1.05); }
+  .g-item .cap {
+    position: absolute;
+    left: 0; right: 0; bottom: 0;
+    padding: 40px 18px 14px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.75));
+    font-size: 0.8rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.9);
+  }
+  .g-tall { grid-row: span 2; }
+  .g-wide { grid-column: span 2; }
+  @media (max-width: 900px) {
+    .gallery { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 200px; }
+  }
+
+  /* ---------- mobility ---------- */
+  #mobility { background: var(--bg-soft); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .mob-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.1fr;
+    gap: 70px;
+    align-items: center;
+  }
+  .mob-points { display: flex; flex-direction: column; gap: 26px; margin-top: 34px; }
+  .mob-point { display: flex; gap: 18px; }
+  .mob-point .n {
+    font-family: var(--font-head);
+    font-weight: 700;
+    color: var(--accent);
+    font-size: 1rem;
+    padding-top: 2px;
+  }
+  .mob-point h3 { font-size: 1.02rem; margin-bottom: 5px; }
+  .mob-point p { font-size: 0.9rem; color: var(--text-dim); }
+  .mob-img img {
+    width: 100%; height: auto; display: block;
+    filter: drop-shadow(0 30px 50px rgba(0, 0, 0, 0.5));
+  }
+  @media (max-width: 900px) { .mob-grid { grid-template-columns: 1fr; gap: 44px; } }
+
+  /* ---------- models ---------- */
+  .model-tabs {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    margin-bottom: 44px;
+  }
+  .model-tab {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 24px 26px;
+    text-align: left;
+    cursor: pointer;
+    font-family: var(--font-body);
+    color: var(--text);
+    transition: border-color 0.3s, transform 0.3s, background 0.3s;
+  }
+  .model-tab:hover { transform: translateY(-3px); border-color: rgba(232, 35, 109, 0.4); }
+  .model-tab.active {
+    border-color: var(--accent);
+    background: linear-gradient(180deg, rgba(232, 35, 109, 0.09), var(--bg-card) 70%);
+  }
+  .model-tab .m-code {
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    transition: color 0.3s;
+  }
+  .model-tab.active .m-code { color: var(--accent); }
+  .model-tab h3 { font-family: var(--font-head); font-size: 1.15rem; margin: 6px 0 4px; }
+  .model-tab .m-tag { font-size: 0.84rem; color: var(--text-dim); }
+  @media (max-width: 720px) { .model-tabs { grid-template-columns: 1fr; } }
+
+  .model-panel { display: none; }
+  .model-panel.active { display: block; animation: panelIn 0.6s cubic-bezier(0.16, 1, 0.3, 1); }
+  @keyframes panelIn {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: none; }
+  }
+  @media (prefers-reduced-motion: reduce) { .model-panel.active { animation: none; } }
+  .model-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 60px;
+    align-items: center;
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: calc(var(--radius) + 6px);
+    padding: 48px;
+  }
+  .model-grid img { width: 100%; height: auto; display: block; filter: drop-shadow(0 30px 50px rgba(0,0,0,0.5)); }
+  .model-grid h3 { font-size: clamp(1.5rem, 3vw, 2rem); margin-bottom: 12px; }
+  .model-grid p.desc { color: var(--text-dim); font-size: 0.95rem; margin-bottom: 22px; }
+  .model-spec { width: 100%; border-collapse: collapse; margin-bottom: 26px; }
+  .model-spec td { padding: 9px 0; border-bottom: 1px solid var(--line); font-size: 0.88rem; }
+  .model-spec td:first-child { color: var(--text-dim); padding-right: 18px; white-space: nowrap; }
+  .model-spec td:last-child { text-align: right; font-weight: 500; }
+  .btn-download {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .btn-download svg { width: 17px; height: 17px; stroke: currentColor; }
+  @media (max-width: 900px) { .model-grid { grid-template-columns: 1fr; gap: 34px; padding: 30px; } }
+
+  .included-head {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 12px;
+  }
+  .included-head .lbl {
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+  }
+  .badge-custom {
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent);
+    background: var(--accent-soft);
+    border: 1px solid rgba(232, 35, 109, 0.3);
+    padding: 3px 10px;
+    border-radius: 100px;
+  }
+  .model-included {
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 7px 18px;
+    margin-bottom: 16px;
+  }
+  .model-included li {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    font-size: 0.85rem;
+  }
+  .model-included svg { width: 14px; height: 14px; stroke: var(--accent); flex-shrink: 0; }
+  .custom-note {
+    font-size: 0.8rem;
+    color: var(--text-dim);
+    margin-bottom: 22px;
+  }
+  .custom-note strong { color: var(--text); font-weight: 600; }
+  @media (max-width: 560px) { .model-included { grid-template-columns: 1fr; } }
+
+  /* ---------- 3D viewer ---------- */
+  #view3d { background: var(--bg-soft); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .view-toggle {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 34px;
+  }
+  .view-toggle button {
+    font-family: var(--font-head);
+    font-weight: 600;
+    font-size: 0.9rem;
+    letter-spacing: 0.04em;
+    color: var(--text-dim);
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 100px;
+    padding: 11px 26px;
+    cursor: pointer;
+    transition: color 0.25s, border-color 0.25s, background 0.25s;
+  }
+  .view-toggle button:hover { color: var(--text); border-color: rgba(232, 35, 109, 0.4); }
+  .view-toggle button.active {
+    color: #fff;
+    background: var(--accent);
+    border-color: var(--accent);
+    box-shadow: 0 8px 26px rgba(232, 35, 109, 0.3);
+  }
+  .viewer-shell {
+    position: relative;
+    border: 1px solid var(--line);
+    border-radius: calc(var(--radius) + 6px);
+    background: radial-gradient(ellipse at 50% 100%, rgba(232, 35, 109, 0.07), transparent 60%), var(--bg-card);
+    overflow: hidden;
+  }
+  model-viewer {
+    width: 100%;
+    height: 560px;
+    display: block;
+    --poster-color: transparent;
+  }
+  @media (max-width: 720px) { model-viewer { height: 400px; } }
+  .viewer-hint {
+    position: absolute;
+    bottom: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    background: rgba(10, 12, 14, 0.6);
+    backdrop-filter: blur(8px);
+    padding: 7px 16px;
+    border-radius: 100px;
+    pointer-events: none;
+  }
+
+  /* ---------- branding ---------- */
+  #branding { background: var(--bg-soft); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .brand-grid {
+    display: grid;
+    grid-template-columns: 1.05fr 1fr;
+    gap: 70px;
+    align-items: center;
+  }
+  .brand-img { position: relative; }
+  .brand-img img { width: 100%; height: auto; display: block; filter: drop-shadow(0 30px 50px rgba(0,0,0,0.5)); }
+  .brand-img .tag {
+    position: absolute;
+    bottom: 18px; left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    background: rgba(10, 12, 14, 0.65);
+    backdrop-filter: blur(8px);
+    padding: 7px 16px;
+    border-radius: 100px;
+  }
+  .brand-points { display: flex; flex-direction: column; gap: 22px; margin-top: 30px; }
+  .brand-point { display: flex; gap: 16px; align-items: flex-start; }
+  .brand-point .icon {
+    width: 40px; height: 40px;
+    flex-shrink: 0;
+    border-radius: 11px;
+    background: var(--accent-soft);
+    display: flex; align-items: center; justify-content: center;
+  }
+  .brand-point .icon svg { width: 19px; height: 19px; stroke: var(--accent); }
+  .brand-point h3 { font-size: 0.98rem; margin-bottom: 3px; }
+  .brand-point p { font-size: 0.88rem; color: var(--text-dim); }
+  @media (max-width: 900px) { .brand-grid { grid-template-columns: 1fr; gap: 44px; } }
+
+  /* ---------- investment / ROI ---------- */
+  .case-card {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    gap: 50px;
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: calc(var(--radius) + 6px);
+    padding: 44px 48px;
+    margin-bottom: 26px;
+  }
+  .case-card blockquote {
+    font-family: var(--font-head);
+    font-size: 1.25rem;
+    font-weight: 500;
+    line-height: 1.5;
+    border-left: 3px solid var(--accent);
+    padding-left: 22px;
+  }
+  .case-card .who { margin-top: 16px; font-size: 0.85rem; color: var(--text-dim); }
+  .case-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; align-content: center; }
+  .case-stat {
+    background: var(--bg-soft);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 18px 20px;
+  }
+  .case-stat .v { font-family: var(--font-head); font-size: 1.45rem; font-weight: 700; color: var(--accent); }
+  .case-stat .l { font-size: 0.76rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-dim); margin-top: 2px; }
+  @media (max-width: 900px) { .case-card { grid-template-columns: 1fr; padding: 30px; } }
+
+  .invest-card {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: calc(var(--radius) + 6px);
+    padding: 44px 48px;
+  }
+  .invest-head { display: flex; align-items: baseline; justify-content: space-between; gap: 20px; flex-wrap: wrap; margin-bottom: 28px; }
+  .invest-head h3 { font-size: 1.35rem; }
+  .invest-price { font-size: 0.9rem; color: var(--text-dim); }
+  .invest-price strong { font-family: var(--font-head); font-size: 1.15rem; color: var(--text); }
+  .invest-pills { display: flex; gap: 10px; flex-wrap: wrap; margin-bottom: 34px; }
+  .invest-pills button {
+    font-family: var(--font-head);
+    font-weight: 600;
+    font-size: 0.88rem;
+    color: var(--text-dim);
+    background: var(--bg-soft);
+    border: 1px solid var(--line);
+    border-radius: 100px;
+    padding: 10px 24px;
+    cursor: pointer;
+    transition: color 0.25s, border-color 0.25s, background 0.25s;
+  }
+  .invest-pills button:hover { color: var(--text); border-color: rgba(232, 35, 109, 0.4); }
+  .invest-pills button.active { color: #fff; background: var(--accent); border-color: var(--accent); }
+
+  .slider-label { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 14px; }
+  .slider-label .lbl { font-size: 0.78rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim); }
+  .slider-label .val { font-family: var(--font-head); font-size: 1.5rem; font-weight: 700; }
+  .slider-label .val small { font-size: 0.8rem; color: var(--text-dim); font-weight: 500; }
+
+  .price-slider {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 12px;
+    border-radius: 100px;
+    outline: none;
+    background: linear-gradient(to right, #2ecc71 0%, #a8d24c 25%, #f1c40f 50%, #f39c2b 75%, #e74c3c 100%);
+    cursor: pointer;
+  }
+  .price-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 26px; height: 26px;
+    border-radius: 50%;
+    background: #fff;
+    border: 5px solid var(--accent);
+    box-shadow: 0 4px 16px rgba(232, 35, 109, 0.45);
+    transition: transform 0.15s;
+  }
+  .price-slider::-webkit-slider-thumb:hover { transform: scale(1.12); }
+  .price-slider::-moz-range-thumb {
+    width: 16px; height: 16px;
+    border-radius: 50%;
+    background: #fff;
+    border: 5px solid var(--accent);
+    box-shadow: 0 4px 16px rgba(232, 35, 109, 0.45);
+  }
+  .price-slider::-moz-range-track { background: transparent; }
+  .zone-labels {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 2px 34px;
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+  }
+  .zone-labels .g { color: #2ecc71; }
+  .zone-labels .y { color: #f1c40f; }
+  .zone-labels .r { color: #e74c3c; }
+
+  .roi-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+  }
+  .roi-tile {
+    background: var(--bg-soft);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 20px 22px;
+    transition: border-color 0.3s;
+  }
+  .roi-tile .v { font-family: var(--font-head); font-size: 1.6rem; font-weight: 700; }
+  .roi-tile .v span { font-size: 0.85rem; color: var(--text-dim); font-weight: 500; }
+  .roi-tile .l { font-size: 0.74rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-dim); margin-top: 4px; }
+  .roi-tile.hl { border-color: rgba(232, 35, 109, 0.45); background: linear-gradient(180deg, rgba(232, 35, 109, 0.08), var(--bg-soft) 75%); }
+  .roi-tile.hl .v { color: var(--accent); }
+  .invest-note { margin-top: 22px; font-size: 0.78rem; color: var(--text-dim); opacity: 0.75; }
+  @media (max-width: 900px) { .roi-grid { grid-template-columns: 1fr 1fr; } .invest-card { padding: 30px; } }
+
+  .finance-card {
+    display: flex;
+    align-items: center;
+    gap: 34px;
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: calc(var(--radius) + 6px);
+    padding: 34px 44px;
+    margin-top: 26px;
+    flex-wrap: wrap;
+  }
+  .finance-logo {
+    background: #fff;
+    border-radius: 14px;
+    padding: 16px 22px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+  }
+  .finance-logo img { width: 110px; height: auto; display: block; }
+  .finance-body { flex: 1; min-width: 260px; }
+  .finance-body h3 { font-size: 1.15rem; margin-bottom: 6px; }
+  .finance-body p { font-size: 0.9rem; color: var(--text-dim); }
+  .finance-points { display: flex; gap: 22px; flex-wrap: wrap; margin-top: 12px; }
+  .finance-points span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.84rem;
+  }
+  .finance-points svg { width: 14px; height: 14px; stroke: var(--accent); flex-shrink: 0; }
+  .finance-cta { flex-shrink: 0; }
+  @media (max-width: 720px) { .finance-card { padding: 26px; gap: 24px; } }
+
+  /* ---------- FAQ ---------- */
+  #faq { background: var(--bg-soft); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .faq-list { max-width: 780px; margin: 0 auto; }
+  .faq-item {
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    transition: border-color 0.3s;
+  }
+  .faq-item[open] { border-color: rgba(232, 35, 109, 0.35); }
+  .faq-item summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 20px 24px;
+    font-family: var(--font-head);
+    font-weight: 600;
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+  }
+  .faq-item summary::-webkit-details-marker { display: none; }
+  .faq-item summary::after {
+    content: "+";
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: var(--accent);
+    transition: transform 0.3s;
+    flex-shrink: 0;
+  }
+  .faq-item[open] summary::after { transform: rotate(45deg); }
+  .faq-item .a { padding: 0 24px 20px; font-size: 0.92rem; color: var(--text-dim); }
+
+  /* ---------- contact form ---------- */
+  .contact-form {
+    max-width: 640px;
+    margin: 54px auto 0;
+    text-align: left;
+  }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+  .field { margin-bottom: 16px; }
+  .field label {
+    display: block;
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--text-dim);
+    margin-bottom: 8px;
+  }
+  .field input, .field select, .field textarea {
+    width: 100%;
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 13px 16px;
+    color: var(--text);
+    font-family: var(--font-body);
+    font-size: 0.95rem;
+    transition: border-color 0.25s, box-shadow 0.25s;
+  }
+  .field select { appearance: none; -webkit-appearance: none; background-image: linear-gradient(45deg, transparent 50%, var(--text-dim) 50%), linear-gradient(135deg, var(--text-dim) 50%, transparent 50%); background-position: calc(100% - 21px) 50%, calc(100% - 16px) 50%; background-size: 5px 5px; background-repeat: no-repeat; }
+  .field textarea { min-height: 130px; resize: vertical; }
+  .field input:focus, .field select:focus, .field textarea:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(232, 35, 109, 0.15);
+  }
+  .field input::placeholder, .field textarea::placeholder { color: rgba(154, 164, 176, 0.5); }
+  .form-actions { display: flex; align-items: center; gap: 18px; margin-top: 8px; flex-wrap: wrap; }
+  .form-actions .btn { border: none; cursor: pointer; font-size: 0.95rem; }
+  .form-sent { color: var(--accent); font-size: 0.9rem; font-weight: 500; display: none; }
+  @media (max-width: 560px) { .form-row { grid-template-columns: 1fr; gap: 0; } }
+
+  /* ---------- contact ---------- */
+  #contact {
+    text-align: center;
+    padding: 130px 0 100px;
+  }
+  #contact h2 { font-size: clamp(2rem, 5vw, 3.2rem); margin-bottom: 18px; }
+  #contact .sub { color: var(--text-dim); max-width: 480px; margin: 0 auto 40px; }
+  .contact-links {
+    display: flex;
+    gap: 16px;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .contact-card {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 100px;
+    padding: 15px 28px;
+    color: var(--text);
+    text-decoration: none;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: border-color 0.3s, transform 0.3s;
+  }
+  .contact-card:hover { border-color: var(--accent); transform: translateY(-3px); }
+  .contact-card svg { width: 18px; height: 18px; stroke: var(--accent); }
+
+  footer {
+    border-top: 1px solid var(--line);
+    padding: 30px 0;
+    text-align: center;
+    font-size: 0.82rem;
+    color: var(--text-dim);
+  }
+</style>
+</head>
+<body>
+
+<nav id="nav">
+  <div class="wrap nav-inner">
+    <a href="#" class="brand">SIMBOX<span>PRO</span></a>
+    <div class="nav-links">
+      <a href="#about">About</a>
+      <a href="#spec">Specification</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#models">Models</a>
+      <a href="#view3d">3D View</a>
+      <a href="#contact" class="nav-cta">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- ============ HERO ============ -->
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow reveal">Complete plug-in solution</span>
+    <h1 class="reveal d1">The all-in-one racing simulator.<br><em>Plug in the power and play.</em></h1>
+    <p class="lead reveal d2">SIMBOX Rally is a complete, ready-to-run simulator built for trade fairs and sim racing events — no cables, no complex logistics, no long setup.</p>
+    <div class="hero-actions reveal d3">
+      <a href="#contact" class="btn btn-primary">Request a quote</a>
+      <a href="#spec" class="btn btn-ghost">See specification</a>
+    </div>
+    <div class="hero-img reveal d3">
+      <img src="images/hero.webp" alt="SIMBOX Rally simulator fully deployed on its flight case" width="1800" height="1516">
+    </div>
+  </div>
+</header>
+
+<!-- ============ STATS ============ -->
+<div class="stats">
+  <div class="wrap stats-inner">
+    <div class="stat reveal"><div class="num">176 <span>cm</span></div><div class="label">Length in use</div></div>
+    <div class="stat reveal d1"><div class="num">65.5 <span>cm</span></div><div class="label">Width</div></div>
+    <div class="stat reveal d2"><div class="num">93.5 <span>cm</span></div><div class="label">Height in use</div></div>
+    <div class="stat reveal d3"><div class="num">245 <span>kg</span></div><div class="label">Weight, packed</div></div>
+  </div>
+</div>
+
+<!-- ============ ABOUT / FEATURES ============ -->
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <div class="sec-tag">Why SIMBOX</div>
+      <h2>Everything you need, in one perfectly engineered box</h2>
+      <p>Top-quality components — wheel, pedals, monitor, computer and a professional racing seat — form one harmonious unit, ready to go. When you're done, simply close the box and everything disappears.</p>
+    </div>
+    <div class="features">
+      <div class="feature reveal">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg></div>
+        <h3>All in One</h3>
+        <p>Everything you need in a single case — no assembly, no configuration. Plug in and play.</p>
+      </div>
+      <div class="feature reveal d1">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.9 6.3 6.6.7-5 4.5 1.4 6.5L12 16.7 6.1 20l1.4-6.5-5-4.5 6.6-.7L12 2z"/></svg></div>
+        <h3>Premium Quality</h3>
+        <p>Built on components from the most renowned brands: Playseat, MOZA, LG, Creative, Logitech, Pimax.</p>
+      </div>
+      <div class="feature reveal d2">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v6M12 15v6"/></svg></div>
+        <h3>Technology</h3>
+        <p>Direct Drive wheel base, OLED display, load-cell pedals, ActiFit-finished seat — optional 4K VR headset.</p>
+      </div>
+      <div class="feature reveal d3">
+        <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></div>
+        <h3>Concert-grade Case</h3>
+        <p>A flight case built to touring standards keeps the rig safe in use and in transport — by road, rail or air.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ SPECIFICATION ============ -->
+<section id="spec">
+  <div class="wrap">
+    <div class="spec-grid">
+      <div class="spec-img reveal">
+        <img src="images/cockpit-front.webp" alt="Driver's view: 39-inch curved OLED display and MOZA direct drive wheel" loading="lazy">
+      </div>
+      <div class="reveal d1">
+        <div class="sec-tag">Specification</div>
+        <h2 style="font-size: clamp(1.8rem, 4vw, 2.4rem); margin-bottom: 28px;">SIMbox Rally Box</h2>
+        <table class="spec-table">
+          <tr><td>MPN</td><td>SB-R1</td></tr>
+          <tr><td>Length in use</td><td>119 – 176 cm</td></tr>
+          <tr><td>Width</td><td>65.5 cm</td></tr>
+          <tr><td>Height in use</td><td>93.5 cm</td></tr>
+          <tr><td>Seat height</td><td>26 – 36 cm</td></tr>
+          <tr><td>Case dimensions (L×W×H)</td><td>191.6 × 97.5 × 121.3 cm</td></tr>
+          <tr><td>Weight, packed</td><td>245 kg</td></tr>
+          <tr><td>Load capacity</td><td>up to 150 kg</td></tr>
+          <tr><td>Recommended driver height</td><td>min. 120 cm / 47 in</td></tr>
+          <tr><td>Country of origin</td><td>Poland</td></tr>
+        </table>
+        <p class="spec-note">* Sample data — final dimensions and weight may vary per configuration.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ GALLERY ============ -->
+<section id="gallery">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <div class="sec-tag">Details</div>
+      <h2>Engineered down to the last latch</h2>
+    </div>
+    <div class="gallery">
+      <div class="g-item g-tall reveal"><img src="images/detail-cables.webp" alt="Integrated cable management with protective sleeves" loading="lazy"><div class="cap">Cable management</div></div>
+      <div class="g-item g-wide reveal d1"><img src="images/detail-seat.webp" alt="Playseat racing seat detail" loading="lazy"><div class="cap">Racing seat</div></div>
+      <div class="g-item reveal d2"><img src="images/detail-latch.webp" alt="Butterfly latches and recessed handles" loading="lazy"><div class="cap">Touring hardware</div></div>
+      <div class="g-item reveal d3"><img src="images/detail-panel.webp" alt="Hexagonal anti-slip surface finish" loading="lazy"><div class="cap">Surface finish</div></div>
+      <div class="g-item g-wide reveal d1"><img src="images/side.webp" alt="Side profile of the deployed SIMBOX simulator" loading="lazy" style="object-position: center 40%;"><div class="cap">Full profile</div></div>
+      <div class="g-item reveal d2"><img src="images/inside-case.webp" alt="Ventilated PC compartment with foam padding" loading="lazy"><div class="cap">PC compartment</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 3D VIEWER ============ -->
+<section id="view3d">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <div class="sec-tag">Interactive 3D</div>
+      <h2>Turn it around. Open it up.</h2>
+      <p>Explore the SIMBOX in 3D — it spins on its own, or grab it and look from any angle.</p>
+    </div>
+    <div class="view-toggle reveal">
+      <button class="active" data-view="closed">Packed for transport</button>
+      <button data-view="opened">Deployed</button>
+    </div>
+    <div class="viewer-shell reveal">
+      <model-viewer id="simboxViewer"
+        src="models/simbox-closed.glb"
+        alt="Interactive 3D model of the SIMBOX simulator"
+        loading="lazy"
+        camera-controls
+        disable-zoom
+        auto-rotate
+        auto-rotate-delay="1500"
+        rotation-per-second="25deg"
+        shadow-intensity="1"
+        shadow-softness="0.8"
+        exposure="1.1"
+        interaction-prompt="none"
+        camera-orbit="35deg 78deg auto">
+      </model-viewer>
+      <div class="viewer-hint">Drag to rotate</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MOBILITY ============ -->
+<section id="mobility" style="border-top: none;">
+  <div class="wrap">
+    <div class="mob-grid">
+      <div class="reveal">
+        <div class="sec-tag">Mobility</div>
+        <h2 style="font-size: clamp(1.8rem, 4vw, 2.4rem);">Closes into a box.<br>Travels anywhere.</h2>
+        <div class="mob-points">
+          <div class="mob-point">
+            <div class="n">01</div>
+            <div>
+              <h3>Fits a standard delivery van</h3>
+              <p>Designed for a classic L2H1 van — the case takes just two-thirds of the load space, the size of four euro pallets.</p>
+            </div>
+          </div>
+          <div class="mob-point">
+            <div class="n">02</div>
+            <div>
+              <h3>Removable dolly &amp; skids</h3>
+              <p>A detachable wheel board and skids make loading effortless. Aluminium fittings and ball corners protect every edge.</p>
+            </div>
+          </div>
+          <div class="mob-point">
+            <div class="n">03</div>
+            <div>
+              <h3>Road, rail or air</h3>
+              <p>Protective foam lining inside the concert-grade case allows safe transport by car, train or plane.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mob-img reveal d1">
+        <img src="images/case-closed.webp" alt="SIMBOX closed flight case with Exerion branding" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ MODELS ============ -->
+<section id="models">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <div class="sec-tag">The lineup</div>
+      <h2>Three simulators. One plug-in philosophy.</h2>
+      <p>Pick a model to see its brochure — every SIMBOX ships as a complete, event-ready package.</p>
+    </div>
+
+    <div class="model-tabs reveal">
+      <button class="model-tab active" data-model="rally">
+        <div class="m-code">SB-R1</div>
+        <h3>SIMBOX Rally</h3>
+        <div class="m-tag">Plug-in rally &amp; racing cockpit</div>
+      </button>
+      <button class="model-tab" data-model="motion">
+        <div class="m-code">SB-M1</div>
+        <h3>SIMBOX Motion</h3>
+        <div class="m-tag">Full-motion racing platform</div>
+      </button>
+      <button class="model-tab" data-model="flight">
+        <div class="m-code">SB-F1</div>
+        <h3>SIMBOX Flight</h3>
+        <div class="m-tag">Motion flight simulator</div>
+      </button>
+    </div>
+
+    <div class="model-panel active" id="panel-rally">
+      <div class="model-grid">
+        <div><img src="images/hero.webp" alt="SIMBOX Rally — plug-in racing cockpit on its flight case"></div>
+        <div>
+          <div class="sec-tag">Brochure · SIMBOX Rally</div>
+          <h3>The all-in-one rally cockpit</h3>
+          <p class="desc">The original SIMBOX: a complete rally simulator packed into a concert-grade flight case. MOZA R5 Direct Drive wheel, load-cell pedals, hydraulic-style handbrake and a 39″ curved OLED — plug in the power and play.</p>
+          <table class="model-spec">
+            <tr><td>Length in use</td><td>119 – 176 cm</td></tr>
+            <tr><td>Width</td><td>65.5 cm</td></tr>
+            <tr><td>Height in use</td><td>93.5 cm</td></tr>
+            <tr><td>Weight, packed</td><td>245 kg</td></tr>
+          </table>
+          <div class="included-head"><span class="lbl">What's included</span><span class="badge-custom">Fully customizable</span></div>
+          <ul class="model-included">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Playseat professional racing seat</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>MOZA R5 Direct Drive bundle</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>MOZA SR-P Lite pedals</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>MOZA HBP handbrake</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>MOZA ES wheel + 12″ mod</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>LG 39″ curved OLED display</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Gaming PC — RTX 4060 Ti</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Creative soundbar</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Logitech keyboard + cable management</li>
+          </ul>
+          <p class="custom-note"><strong>Fully customizable</strong> — every component can be swapped or upgraded to match your event and budget.</p>
+          <a href="#" class="btn btn-primary btn-download" data-brochure="rally">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            Download brochure
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="model-panel" id="panel-motion">
+      <div class="model-grid">
+        <div><img src="images/model-motion.webp" alt="SIMBOX Motion — full-motion platform with Sparco seat" loading="lazy"></div>
+        <div>
+          <div class="sec-tag">Brochure · SIMBOX Motion</div>
+          <h3>Feel every bump, drift and jump</h3>
+          <p class="desc">A professional 6-DOF motion platform paired with a Sparco racing seat and curved display. Every acceleration, kerb and surface change is translated into real movement — the ultimate crowd magnet for any event.</p>
+          <table class="model-spec">
+            <tr><td>Length in use</td><td>210 cm</td></tr>
+            <tr><td>Width</td><td>158 cm</td></tr>
+            <tr><td>Height in use</td><td>162 cm</td></tr>
+            <tr><td>Weight, packed</td><td>320 kg</td></tr>
+          </table>
+          <div class="included-head"><span class="lbl">What's included</span><span class="badge-custom">Fully customizable</span></div>
+          <ul class="model-included">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>DOF Reality 6-DOF motion platform</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Sparco PRO 2000 racing seat</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>MOZA Direct Drive wheel</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Load-cell pedal set</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>4-point safety harness</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>LG 39″ curved OLED display</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Gaming PC — RTX 4070</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Surround sound system</li>
+          </ul>
+          <p class="custom-note"><strong>Fully customizable</strong> — every component can be swapped or upgraded to match your event and budget.</p>
+          <a href="#" class="btn btn-primary btn-download" data-brochure="motion">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            Download brochure
+          </a>
+        </div>
+      </div>
+    </div>
+
+    <div class="model-panel" id="panel-flight">
+      <div class="model-grid">
+        <div><img src="images/model-flight.webp" alt="SIMBOX Flight — motion flight simulator with HOTAS controls" loading="lazy"></div>
+        <div>
+          <div class="sec-tag">Brochure · SIMBOX Flight</div>
+          <h3>Take off from the show floor</h3>
+          <p class="desc">The motion platform configured for aviation: HOTAS throttle and stick, rudder pedals and a wide curved display. From airliners to fighter jets — a full-motion flight experience wherever your event lands.</p>
+          <table class="model-spec">
+            <tr><td>Length in use</td><td>220 cm</td></tr>
+            <tr><td>Width</td><td>158 cm</td></tr>
+            <tr><td>Height in use</td><td>165 cm</td></tr>
+            <tr><td>Weight, packed</td><td>310 kg</td></tr>
+          </table>
+          <div class="included-head"><span class="lbl">What's included</span><span class="badge-custom">Fully customizable</span></div>
+          <ul class="model-included">
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>DOF Reality 6-DOF motion platform</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Sparco PRO 2000 racing seat</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>HOTAS throttle &amp; flight stick</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Rudder pedals</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Flight instrument panel</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>LG 39″ curved OLED display</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Gaming PC — RTX 4070</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Aviation headset</li>
+          </ul>
+          <p class="custom-note"><strong>Fully customizable</strong> — every component can be swapped or upgraded to match your event and budget.</p>
+          <a href="#" class="btn btn-primary btn-download" data-brochure="flight">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            Download brochure
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CUSTOM BRANDING ============ -->
+<section id="branding">
+  <div class="wrap">
+    <div class="brand-grid">
+      <div class="reveal">
+        <div class="sec-tag">Custom branding</div>
+        <h2 style="font-size: clamp(1.8rem, 4vw, 2.4rem);">Your brand on every surface</h2>
+        <p style="color: var(--text-dim); margin-top: 14px;">Every SIMBOX is built to order — and branded to order. We turn the simulator into a rolling billboard for your company, from the flight case to the in-game screens.</p>
+        <div class="brand-points">
+          <div class="brand-point">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19 7-7 3 3-7 7-3-3z"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="m2 2 7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg></div>
+            <div>
+              <h3>Full vinyl wrap</h3>
+              <p>Case, rig and monitor shroud wrapped in your colors and logos — designed by our studio, approved by you.</p>
+            </div>
+          </div>
+          <div class="brand-point">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
+            <div>
+              <h3>Branded screens &amp; overlays</h3>
+              <p>Custom boot animation, menu skin, leaderboard and in-game overlays carrying your identity at every glance.</p>
+            </div>
+          </div>
+          <div class="brand-point">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg></div>
+            <div>
+              <h3>Custom color accents</h3>
+              <p>Seat stitching, RGB lighting, powder-coated frame details — matched to your brand book.</p>
+            </div>
+          </div>
+          <div class="brand-point">
+            <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+            <div>
+              <h3>Engraved &amp; printed panels</h3>
+              <p>Laser-engraved logo plates and printed case panels for a finish that survives years on the road.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="brand-img reveal d1">
+        <img src="images/case-closed.webp" alt="Example of a custom-branded SIMBOX flight case" loading="lazy">
+        <div class="tag">Example: custom-branded case</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ INVESTMENT / ROI ============ -->
+<section id="invest">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <div class="sec-tag">Case study · Investment</div>
+      <h2>A simulator that pays for itself</h2>
+      <p>SIMBOX isn't just a showpiece — it's rental inventory. Event agencies charge premium day rates for simulator activations. See how fast yours breaks even.</p>
+    </div>
+
+    <div class="case-card reveal">
+      <div>
+        <blockquote>"We booked the SIMBOX Rally for 34 events in the first year — trade fairs, product launches, team days. It paid for itself before month nine."</blockquote>
+        <div class="who">— Event agency, Warsaw · SIMBOX Rally, season 2025 <em>(illustrative case study)</em></div>
+      </div>
+      <div class="case-stats">
+        <div class="case-stat"><div class="v">34</div><div class="l">events, year one</div></div>
+        <div class="case-stat"><div class="v">€1,400</div><div class="l">avg. day rate</div></div>
+        <div class="case-stat"><div class="v">9 mo</div><div class="l">to break even</div></div>
+        <div class="case-stat"><div class="v">+36%</div><div class="l">ROI, year one</div></div>
+      </div>
+    </div>
+
+    <div class="invest-card reveal d1">
+      <div class="invest-head">
+        <h3>Run your own numbers</h3>
+        <div class="invest-price">Purchase price: <strong id="calcPrice">€34,900</strong></div>
+      </div>
+
+      <div class="invest-pills" id="calcModels">
+        <button class="active" data-price="34900" data-rate="1200">SIMBOX Rally</button>
+        <button data-price="44900" data-rate="1500">SIMBOX F1</button>
+        <button data-price="54900" data-rate="1900">SIMBOX Motion</button>
+        <button data-price="57900" data-rate="2100">SIMBOX Flight</button>
+      </div>
+
+      <div class="slider-label">
+        <span class="lbl">Your rental day rate</span>
+        <span class="val" id="calcRate">€1,200 <small>/ event day</small></span>
+      </div>
+      <input type="range" class="price-slider" id="calcSlider" min="500" max="4000" step="50" value="1200">
+      <div class="zone-labels">
+        <span class="g">High demand</span>
+        <span class="y">Market rate</span>
+        <span class="r">Premium</span>
+      </div>
+
+      <div class="roi-grid">
+        <div class="roi-tile hl"><div class="v" id="outEvents">30</div><div class="l">rentals to break even</div></div>
+        <div class="roi-tile"><div class="v" id="outMonthly">6 <span>/ month</span></div><div class="l">est. bookings at this rate</div></div>
+        <div class="roi-tile"><div class="v" id="outPayback">5 <span>months</span></div><div class="l">est. payback time</div></div>
+        <div class="roi-tile"><div class="v" id="outYear1">+€51k</div><div class="l">est. year-one net</div></div>
+      </div>
+      <p class="invest-note">* Sample calculation with illustrative prices. Booking assumption: demand eases smoothly from ≈ 6 rentals/month at budget pricing to ≈ 3.5 at premium. Actual results depend on your market, sales and season. Purchase prices shown are examples — contact us for a quote.</p>
+    </div>
+
+    <div class="finance-card reveal d2">
+      <div class="finance-logo">
+        <img src="images/efl logo.svg" alt="EFL — Crédit Agricole Group leasing" width="110" height="68">
+      </div>
+      <div class="finance-body">
+        <h3>Financing available through EFL</h3>
+        <p>You don't have to buy your SIMBOX outright. In partnership with EFL (Crédit Agricole Group) we offer leasing and installment plans — so your rental revenue covers the monthly payments from day one.</p>
+        <div class="finance-points">
+          <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Leasing &amp; installment plans</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Fast, simple financing decision</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Terms tailored to your business</span>
+        </div>
+      </div>
+      <a href="#contact" class="btn btn-ghost finance-cta">Ask about financing</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ FAQ ============ -->
+<section id="faq">
+  <div class="wrap">
+    <div class="sec-head center reveal">
+      <div class="sec-tag">FAQ</div>
+      <h2>Frequently asked questions</h2>
+    </div>
+    <div class="faq-list reveal">
+      <details class="faq-item">
+        <summary>What is SIMBOX?</summary>
+        <div class="a">SIMBOX is a complete, plug-in racing or flight simulator built into a concert-grade flight case. Wheel, pedals, racing seat, curved display, gaming PC and sound system are pre-assembled and pre-cabled — you plug in the power and play. It's designed for trade fairs, brand activations, product launches and sim racing events.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Which SIMBOX models are available?</summary>
+        <div class="a">Four models: SIMBOX Rally (plug-in rally cockpit), SIMBOX F1 (formula-style cockpit), SIMBOX Motion (full-motion racing platform on a 6-DOF motion base) and SIMBOX Flight (full-motion flight simulator with HOTAS controls). Every configuration is fully customizable — components can be swapped or upgraded to match your event and budget.</div>
+      </details>
+      <details class="faq-item">
+        <summary>How long does setup take at an event?</summary>
+        <div class="a">Minutes, not hours. The simulator ships assembled inside its case — there is no cabling and no configuration on site. Open the case, plug in a single power connection and the system is ready to run.</div>
+      </details>
+      <details class="faq-item">
+        <summary>How is SIMBOX transported?</summary>
+        <div class="a">The closed case fits a standard L2H1 delivery van and rolls on a removable dolly with skids. Aluminium fittings, ball corners and internal protective foam make it safe to transport by road, rail or air — it's built to the same standards as touring concert equipment.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Can SIMBOX be branded with my company's identity?</summary>
+        <div class="a">Yes. We offer full custom branding: vinyl wraps of the case and rig, branded boot screens and in-game overlays, leaderboards with your logo, custom color accents and laser-engraved panels — all designed to your brand book.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Is financing or leasing available?</summary>
+        <div class="a">Yes. In partnership with EFL (Crédit Agricole Group) we offer leasing and installment plans with terms tailored to your business, so you can spread the cost while the simulator earns rental revenue.</div>
+      </details>
+      <details class="faq-item">
+        <summary>Can SIMBOX earn money as rental inventory?</summary>
+        <div class="a">Many owners rent their SIMBOX to event agencies and brands. Market day rates for event simulators typically range from several hundred to a few thousand euro per event day, depending on the model and market — our on-page calculator lets you estimate break-even for your own pricing.</div>
+      </details>
+    </div>
+  </div>
+</section>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "What is SIMBOX?", "acceptedAnswer": { "@type": "Answer", "text": "SIMBOX is a complete, plug-in racing or flight simulator built into a concert-grade flight case. Wheel, pedals, racing seat, curved display, gaming PC and sound system are pre-assembled and pre-cabled — you plug in the power and play. It's designed for trade fairs, brand activations, product launches and sim racing events." } },
+    { "@type": "Question", "name": "Which SIMBOX models are available?", "acceptedAnswer": { "@type": "Answer", "text": "Four models: SIMBOX Rally (plug-in rally cockpit), SIMBOX F1 (formula-style cockpit), SIMBOX Motion (full-motion racing platform on a 6-DOF motion base) and SIMBOX Flight (full-motion flight simulator with HOTAS controls). Every configuration is fully customizable." } },
+    { "@type": "Question", "name": "How long does setup take at an event?", "acceptedAnswer": { "@type": "Answer", "text": "Minutes, not hours. The simulator ships assembled inside its case — there is no cabling and no configuration on site. Open the case, plug in a single power connection and the system is ready to run." } },
+    { "@type": "Question", "name": "How is SIMBOX transported?", "acceptedAnswer": { "@type": "Answer", "text": "The closed case fits a standard L2H1 delivery van and rolls on a removable dolly with skids. Aluminium fittings, ball corners and internal protective foam make it safe to transport by road, rail or air." } },
+    { "@type": "Question", "name": "Can SIMBOX be branded with my company's identity?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Full custom branding is available: vinyl wraps of the case and rig, branded boot screens and in-game overlays, leaderboards with your logo, custom color accents and laser-engraved panels." } },
+    { "@type": "Question", "name": "Is financing or leasing available?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. In partnership with EFL (Crédit Agricole Group), SIMBOXPRO offers leasing and installment plans with terms tailored to your business." } },
+    { "@type": "Question", "name": "Can SIMBOX earn money as rental inventory?", "acceptedAnswer": { "@type": "Answer", "text": "Many owners rent their SIMBOX to event agencies and brands. Market day rates for event simulators typically range from several hundred to a few thousand euro per event day, depending on the model and market." } }
+  ]
+}
+</script>
+
+<!-- ============ CONTACT ============ -->
+<section id="contact">
+  <div class="wrap">
+    <div class="reveal">
+      <div class="sec-tag">Contact</div>
+      <h2>Bring SIMBOX to your next event</h2>
+      <p class="sub">Tell us about your trade fair, launch or sim racing event — we'll take care of the rest.</p>
+    </div>
+    <div class="contact-links reveal d1">
+      <a class="contact-card" href="mailto:contact@simboxpro.com">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m2 7 10 6L22 7"/></svg>
+        contact@simboxpro.com
+      </a>
+      <a class="contact-card" href="tel:+48608662334">
+        <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.7A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 2 .7 2.9a2 2 0 0 1-.5 2.1L8.1 10a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c1 .3 1.9.5 2.9.7a2 2 0 0 1 1.6 2z"/></svg>
+        +48 608 662 334
+      </a>
+    </div>
+
+    <form class="contact-form reveal" id="contactForm" novalidate>
+      <div class="form-row">
+        <div class="field">
+          <label for="f-name">Name</label>
+          <input type="text" id="f-name" name="name" placeholder="John Smith" required>
+        </div>
+        <div class="field">
+          <label for="f-company">Company</label>
+          <input type="text" id="f-company" name="company" placeholder="Your company">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="field">
+          <label for="f-email">Email</label>
+          <input type="email" id="f-email" name="email" placeholder="you@company.com" required>
+        </div>
+        <div class="field">
+          <label for="f-phone">Phone</label>
+          <input type="tel" id="f-phone" name="phone" placeholder="+48 600 000 000">
+        </div>
+      </div>
+      <div class="field">
+        <label for="f-model">I'm interested in</label>
+        <select id="f-model" name="model">
+          <option value="rally">SIMBOX Rally</option>
+          <option value="motion">SIMBOX Motion</option>
+          <option value="flight">SIMBOX Flight</option>
+          <option value="other">Not sure yet</option>
+        </select>
+      </div>
+      <div class="field">
+        <label for="f-message">Message</label>
+        <textarea id="f-message" name="message" placeholder="Tell us about your event — date, location, audience…"></textarea>
+      </div>
+      <div class="form-actions">
+        <button type="submit" class="btn btn-primary">Send message</button>
+        <a href="#" class="btn btn-ghost btn-download" data-brochure="general">
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+          Download brochure
+        </a>
+        <span class="form-sent" id="formSent">Thanks! We'll get back to you shortly.</span>
+      </div>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">© 2026 Exerion · SIMBOX — Complete plug-in solution for trade fairs and sim racing events</div>
+</footer>
+
+<script>
+  // navbar border on scroll
+  const nav = document.getElementById("nav");
+  addEventListener("scroll", () => nav.classList.toggle("scrolled", scrollY > 20), { passive: true });
+
+  // scroll reveal
+  const io = new IntersectionObserver((entries) => {
+    for (const e of entries) {
+      if (e.isIntersecting) {
+        e.target.classList.add("visible");
+        io.unobserve(e.target);
+      }
+    }
+  }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
+  document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+
+  // model selector — click a tab, show that model's brochure panel
+  const tabs = document.querySelectorAll(".model-tab");
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      tabs.forEach((t) => t.classList.remove("active"));
+      tab.classList.add("active");
+      document.querySelectorAll(".model-panel").forEach((p) => p.classList.remove("active"));
+      document.getElementById("panel-" + tab.dataset.model).classList.add("active");
+    });
+  });
+
+  // 3D viewer — switch between opened / closed models
+  const viewer = document.getElementById("simboxViewer");
+  const viewBtns = document.querySelectorAll(".view-toggle button");
+  viewBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      viewBtns.forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+      viewer.src = "models/simbox-" + btn.dataset.view + ".glb";
+      viewer.cameraOrbit = "35deg 78deg auto";
+    });
+  });
+
+  // ROI calculator
+  const calcSlider = document.getElementById("calcSlider");
+  const calcModels = document.querySelectorAll("#calcModels button");
+  let calcPrice = 34900;
+
+  const fmtEur = (n) => "€" + n.toLocaleString("en-US");
+
+  // bookings/month falls smoothly from 6 (budget pricing) to 3.5 (premium),
+  // so monthly revenue — and payback — always improves as the rate goes up
+  function calcPerMonth(rate) {
+    const p = (rate - +calcSlider.min) / (calcSlider.max - calcSlider.min);
+    return 6 - 2.5 * p;
+  }
+
+  function calcUpdate() {
+    const rate = +calcSlider.value;
+    const perMonth = calcPerMonth(rate);
+    const events = Math.ceil(calcPrice / rate);
+    const payback = Math.ceil(calcPrice / (rate * perMonth));
+    const year1 = Math.round(rate * perMonth * 12 - calcPrice);
+    document.getElementById("calcRate").innerHTML = fmtEur(rate) + " <small>/ event day</small>";
+    document.getElementById("calcPrice").textContent = fmtEur(calcPrice);
+    document.getElementById("outEvents").textContent = events;
+    document.getElementById("outMonthly").innerHTML = (Math.round(perMonth * 10) / 10) + " <span>/ month</span>";
+    document.getElementById("outPayback").innerHTML = payback + " <span>month" + (payback === 1 ? "" : "s") + "</span>";
+    document.getElementById("outYear1").textContent = (year1 >= 0 ? "+" : "−") + "€" + Math.round(Math.abs(year1) / 1000) + "k";
+  }
+
+  calcModels.forEach((btn) => {
+    btn.addEventListener("click", () => {
+      calcModels.forEach((b) => b.classList.remove("active"));
+      btn.classList.add("active");
+      calcPrice = +btn.dataset.price;
+      calcSlider.value = btn.dataset.rate;
+      calcUpdate();
+    });
+  });
+  calcSlider.addEventListener("input", calcUpdate);
+  calcUpdate();
+
+  // brochure download buttons — placeholder, not wired to files yet
+  document.querySelectorAll("[data-brochure]").forEach((btn) => {
+    btn.addEventListener("click", (e) => e.preventDefault());
+  });
+
+  // contact form — intentionally not wired to any backend yet
+  document.getElementById("contactForm").addEventListener("submit", (e) => {
+    e.preventDefault();
+    document.getElementById("formSent").style.display = "inline";
+  });
+</script>
+
+</body>
+</html>
