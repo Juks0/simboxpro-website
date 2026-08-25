@@ -1563,7 +1563,7 @@
 </footer>
 
 <div id="cookieNotice" role="dialog" aria-label="Cookie notice">
-  <p>We use a few essential cookies/local storage to run this site and to send messages from the contact form. No tracking or advertising cookies. <a href="mailto:contact@simboxpro.com">Questions? Get in touch.</a></p>
+  <p>We use essential local storage to run this site, plus optional analytics cookies (Google Analytics) to see how visitors use it. Analytics only loads if you accept. <a href="mailto:contact@simboxpro.com">Questions? Get in touch.</a></p>
   <div class="cookie-actions">
     <button id="cookieAccept" type="button">Accept</button>
     <button id="cookieDecline" type="button">Decline</button>
@@ -1586,22 +1586,56 @@
   }, { threshold: 0.12, rootMargin: "0px 0px -40px 0px" });
   document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
 
-  // cookie notice — small dismissible popup, choice remembered in localStorage
+  // cookie notice — small dismissible popup; Google Analytics only loads on Accept
   (() => {
-    const notice = document.getElementById("cookieNotice");
+    const GA_ID = "G-WG3F8RCG6T";
     const KEY = "simboxpro-cookie-consent";
+    const notice = document.getElementById("cookieNotice");
     const show = () => notice.classList.add("visible");
     const hide = () => notice.classList.remove("visible");
+    let gaLoaded = false;
 
-    if (!localStorage.getItem(KEY)) {
+    function loadAnalytics() {
+      if (gaLoaded) return;
+      gaLoaded = true;
+      window["ga-disable-" + GA_ID] = false;
+      const s = document.createElement("script");
+      s.async = true;
+      s.src = "https://www.googletagmanager.com/gtag/js?id=" + GA_ID;
+      document.head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = window.gtag || function () { dataLayer.push(arguments); };
+      gtag("js", new Date());
+      gtag("config", GA_ID);
+    }
+
+    function disableAnalytics() {
+      window["ga-disable-" + GA_ID] = true;
+      document.cookie.split(";").forEach((c) => {
+        const name = c.split("=")[0].trim();
+        if (/^_ga|^_gid|^_gat/.test(name)) {
+          document.cookie = name + "=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+        }
+      });
+    }
+
+    const consent = localStorage.getItem(KEY);
+    if (consent === "accepted") {
+      loadAnalytics();
+    } else if (consent === "declined") {
+      disableAnalytics();
+    } else {
       setTimeout(show, 900);
     }
+
     document.getElementById("cookieAccept").addEventListener("click", () => {
       localStorage.setItem(KEY, "accepted");
+      loadAnalytics();
       hide();
     });
     document.getElementById("cookieDecline").addEventListener("click", () => {
       localStorage.setItem(KEY, "declined");
+      disableAnalytics();
       hide();
     });
     document.getElementById("cookieSettingsLink").addEventListener("click", show);
