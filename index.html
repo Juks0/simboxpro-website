@@ -1456,7 +1456,8 @@
       </a>
     </div>
 
-    <form class="contact-form reveal" id="contactForm" novalidate>
+    <form class="contact-form reveal" id="contactForm">
+      <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
       <div class="form-row">
         <div class="field">
           <label for="f-name">Name</label>
@@ -1590,10 +1591,42 @@
     btn.addEventListener("click", (e) => e.preventDefault());
   });
 
-  // contact form — intentionally not wired to any backend yet
-  document.getElementById("contactForm").addEventListener("submit", (e) => {
+  // contact form — sends via FormSubmit.co to contact@simboxpro.com
+  const contactForm = document.getElementById("contactForm");
+  contactForm.addEventListener("submit", async (e) => {
     e.preventDefault();
-    document.getElementById("formSent").style.display = "inline";
+    const btn = contactForm.querySelector('button[type="submit"]');
+    const sent = document.getElementById("formSent");
+    const data = Object.fromEntries(new FormData(contactForm).entries());
+    if (data._honey) return; // spam bot filled the honeypot
+    btn.disabled = true;
+    btn.textContent = "Sending…";
+    sent.style.display = "none";
+    try {
+      const res = await fetch("https://formsubmit.co/ajax/contact@simboxpro.com", {
+        method: "POST",
+        headers: { "Content-Type": "application/json", "Accept": "application/json" },
+        body: JSON.stringify({
+          name: data.name,
+          company: data.company || "—",
+          email: data.email,
+          phone: data.phone || "—",
+          "interested in": data.model,
+          message: data.message || "—",
+          _subject: "SIMBOXPRO inquiry — " + data.model,
+          _template: "table",
+          _captcha: "false"
+        })
+      });
+      if (!res.ok) throw new Error("HTTP " + res.status);
+      sent.textContent = "Thanks! Your message has been sent — we'll get back to you shortly.";
+      contactForm.reset();
+    } catch (err) {
+      sent.textContent = "Something went wrong — please email us directly at contact@simboxpro.com.";
+    }
+    sent.style.display = "inline";
+    btn.disabled = false;
+    btn.textContent = "Send message";
   });
 </script>
 
