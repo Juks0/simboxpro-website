@@ -181,6 +181,28 @@
     transition: background 0.25s, color 0.25s !important;
   }
   .nav-cta:hover { background: var(--accent); color: #fff !important; }
+  .lang-toggle {
+    display: flex;
+    gap: 2px;
+    background: var(--bg-card);
+    border: 1px solid var(--line);
+    border-radius: 100px;
+    padding: 3px;
+  }
+  .lang-toggle button {
+    font-family: var(--font-head);
+    font-weight: 700;
+    font-size: 0.72rem;
+    letter-spacing: 0.03em;
+    color: var(--text-dim);
+    background: transparent;
+    border: none;
+    border-radius: 100px;
+    padding: 5px 11px;
+    cursor: pointer;
+    transition: background 0.25s, color 0.25s;
+  }
+  .lang-toggle button.active { background: var(--accent); color: #fff; }
   @media (max-width: 720px) { .nav-links a:not(.nav-cta) { display: none; } }
 
   /* ---------- hero ---------- */
@@ -997,12 +1019,16 @@
   <div class="wrap nav-inner">
     <a href="#" class="brand">SIMBOX<span>PRO</span></a>
     <div class="nav-links">
-      <a href="#about">About</a>
-      <a href="#spec">Specification</a>
-      <a href="#gallery">Gallery</a>
-      <a href="#models">Models</a>
-      <a href="#view3d">3D View</a>
-      <a href="#contact" class="nav-cta">Contact</a>
+      <a href="#about" data-i18n="nav.about">About</a>
+      <a href="#spec" data-i18n="nav.spec">Specification</a>
+      <a href="#gallery" data-i18n="nav.gallery">Gallery</a>
+      <a href="#models" data-i18n="nav.models">Models</a>
+      <a href="#view3d" data-i18n="nav.view3d">3D View</a>
+      <div class="lang-toggle" role="group" aria-label="Language">
+        <button type="button" data-lang="en" class="active">EN</button>
+        <button type="button" data-lang="pl">PL</button>
+      </div>
+      <a href="#contact" class="nav-cta" data-i18n="nav.contact">Contact</a>
     </div>
   </div>
 </nav>
@@ -1010,12 +1036,12 @@
 <!-- ============ HERO ============ -->
 <header class="hero">
   <div class="wrap">
-    <span class="eyebrow reveal">Complete plug-in solution</span>
-    <h1 class="reveal d1">The all-in-one racing simulator.<br><em>Plug in the power and play.</em></h1>
-    <p class="lead reveal d2">SIMBOX Rally is a complete, ready-to-run simulator built for trade fairs and sim racing events — no cables, no complex logistics, no long setup.</p>
+    <span class="eyebrow reveal" data-i18n="hero.eyebrow">Complete plug-in solution</span>
+    <h1 class="reveal d1" data-i18n-html="hero.title">The all-in-one racing simulator.<br><em>Plug in the power and play.</em></h1>
+    <p class="lead reveal d2" data-i18n="hero.lead">SIMBOX Rally is a complete, ready-to-run simulator built for trade fairs and sim racing events — no cables, no complex logistics, no long setup.</p>
     <div class="hero-actions reveal d3">
-      <a href="#contact" class="btn btn-primary">Request a quote</a>
-      <a href="#spec" class="btn btn-ghost">See specification</a>
+      <a href="#contact" class="btn btn-primary" data-i18n="hero.cta1">Request a quote</a>
+      <a href="#spec" class="btn btn-ghost" data-i18n="hero.cta2">See specification</a>
     </div>
     <div class="hero-img reveal d3">
       <img src="images/hero.webp" alt="SIMBOX Rally simulator fully deployed on its flight case" width="1800" height="1516">
@@ -1026,10 +1052,10 @@
 <!-- ============ STATS ============ -->
 <div class="stats">
   <div class="wrap stats-inner">
-    <div class="stat reveal"><div class="num">176 <span>cm</span></div><div class="label">Length in use</div></div>
-    <div class="stat reveal d1"><div class="num">65.5 <span>cm</span></div><div class="label">Width</div></div>
-    <div class="stat reveal d2"><div class="num">93.5 <span>cm</span></div><div class="label">Height in use</div></div>
-    <div class="stat reveal d3"><div class="num">250 <span>kg</span></div><div class="label">Weight, packed</div></div>
+    <div class="stat reveal"><div class="num">176 <span>cm</span></div><div class="label" data-i18n="stats.length">Length in use</div></div>
+    <div class="stat reveal d1"><div class="num">65.5 <span>cm</span></div><div class="label" data-i18n="stats.width">Width</div></div>
+    <div class="stat reveal d2"><div class="num">93.5 <span>cm</span></div><div class="label" data-i18n="stats.height">Height in use</div></div>
+    <div class="stat reveal d3"><div class="num">250 <span>kg</span></div><div class="label" data-i18n="stats.weight">Weight, packed</div></div>
   </div>
 </div>
 
@@ -1037,30 +1063,30 @@
 <section id="about">
   <div class="wrap">
     <div class="sec-head center reveal">
-      <div class="sec-tag">Why SIMBOX</div>
-      <h2>Everything you need, in one perfectly engineered box</h2>
-      <p>Top-quality components — wheel, pedals, monitor, computer and a professional racing seat — form one harmonious unit, ready to go. When you're done, simply close the box and everything disappears.</p>
+      <div class="sec-tag" data-i18n="about.tag">Why SIMBOX</div>
+      <h2 data-i18n="about.h2">Everything you need, in one perfectly engineered box</h2>
+      <p data-i18n="about.p">Top-quality components — wheel, pedals, monitor, computer and a professional racing seat — form one harmonious unit, ready to go. When you're done, simply close the box and everything disappears.</p>
     </div>
     <div class="features">
       <div class="feature reveal">
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M13 2 3 14h7l-1 8 10-12h-7l1-8z"/></svg></div>
-        <h3>All in One</h3>
-        <p>Everything you need in a single case — no assembly, no configuration. Plug in and play.</p>
+        <h3 data-i18n="about.f1.h">All in One</h3>
+        <p data-i18n="about.f1.p">Everything you need in a single case — no assembly, no configuration. Plug in and play.</p>
       </div>
       <div class="feature reveal d1">
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.9 6.3 6.6.7-5 4.5 1.4 6.5L12 16.7 6.1 20l1.4-6.5-5-4.5 6.6-.7L12 2z"/></svg></div>
-        <h3>Premium Quality</h3>
-        <p>Built on components from the most renowned brands: Playseat, MOZA, LG, Creative, Logitech, Pimax.</p>
+        <h3 data-i18n="about.f2.h">Premium Quality</h3>
+        <p data-i18n="about.f2.p">Built on components from the most renowned brands: Playseat, MOZA, LG, Creative, Logitech, Pimax.</p>
       </div>
       <div class="feature reveal d2">
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3v6M12 15v6"/></svg></div>
-        <h3>Technology</h3>
-        <p>Direct Drive wheel base, OLED display, load-cell pedals, ActiFit-finished seat — optional 4K VR headset.</p>
+        <h3 data-i18n="about.f3.h">Technology</h3>
+        <p data-i18n="about.f3.p">Direct Drive wheel base, OLED display, load-cell pedals, ActiFit-finished seat — optional 4K VR headset.</p>
       </div>
       <div class="feature reveal d3">
         <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/></svg></div>
-        <h3>Concert-grade Case</h3>
-        <p>A flight case built to touring standards keeps the rig safe in use and in transport — by road, rail or air.</p>
+        <h3 data-i18n="about.f4.h">Concert-grade Case</h3>
+        <p data-i18n="about.f4.p">A flight case built to touring standards keeps the rig safe in use and in transport — by road, rail or air.</p>
       </div>
     </div>
   </div>
@@ -1074,22 +1100,22 @@
         <img src="images/cockpit-front.webp" alt="Driver's view: 39-inch curved OLED display and MOZA direct drive wheel" loading="lazy">
       </div>
       <div class="reveal d1">
-        <div class="sec-tag">Specification</div>
+        <div class="sec-tag" data-i18n="spec.tag">Specification</div>
         <h2 style="font-size: clamp(1.8rem, 4vw, 2.4rem); margin-bottom: 28px;">SIMbox Rally Box</h2>
         <table class="spec-table">
           <tr><td>MPN</td><td>SB-R1</td></tr>
-          <tr><td>Length in use</td><td>119 – 176 cm</td></tr>
-          <tr><td>Width</td><td>65.5 cm</td></tr>
-          <tr><td>Height in use</td><td>93.5 cm</td></tr>
-          <tr><td>Seat height</td><td>26 – 36 cm</td></tr>
-          <tr><td>Case dimensions (L×W×H)</td><td>193.5 × 99.5 × 124 cm</td></tr>
-          <tr><td>Case with dolly (L×W×H)</td><td>194.5 × 101.5 × 139 cm</td></tr>
-          <tr><td>Weight, packed</td><td>250 kg</td></tr>
-          <tr><td>Load capacity</td><td>up to 150 kg</td></tr>
-          <tr><td>Recommended driver height</td><td>min. 120 cm / 47 in</td></tr>
-          <tr><td>Country of origin</td><td>Poland</td></tr>
+          <tr><td data-i18n="spec.length">Length in use</td><td>119 – 176 cm</td></tr>
+          <tr><td data-i18n="spec.width">Width</td><td>65.5 cm</td></tr>
+          <tr><td data-i18n="spec.height">Height in use</td><td>93.5 cm</td></tr>
+          <tr><td data-i18n="spec.seatHeight">Seat height</td><td>26 – 36 cm</td></tr>
+          <tr><td data-i18n="spec.caseDim">Case dimensions (L×W×H)</td><td>193.5 × 99.5 × 124 cm</td></tr>
+          <tr><td data-i18n="spec.caseDolly">Case with dolly (L×W×H)</td><td>194.5 × 101.5 × 139 cm</td></tr>
+          <tr><td data-i18n="spec.weight">Weight, packed</td><td>250 kg</td></tr>
+          <tr><td data-i18n="spec.load">Load capacity</td><td data-i18n="spec.loadVal">up to 150 kg</td></tr>
+          <tr><td data-i18n="spec.driverHeight">Recommended driver height</td><td data-i18n="spec.driverHeightVal">min. 120 cm / 47 in</td></tr>
+          <tr><td data-i18n="spec.country">Country of origin</td><td data-i18n="spec.countryVal">Poland</td></tr>
         </table>
-        <p class="spec-note">* Specification may vary per configuration.</p>
+        <p class="spec-note" data-i18n="spec.note">* Specification may vary per configuration.</p>
       </div>
     </div>
   </div>
@@ -1099,16 +1125,16 @@
 <section id="gallery">
   <div class="wrap">
     <div class="sec-head reveal">
-      <div class="sec-tag">Details</div>
-      <h2>Engineered down to the last latch</h2>
+      <div class="sec-tag" data-i18n="gallery.tag">Details</div>
+      <h2 data-i18n="gallery.h2">Engineered down to the last latch</h2>
     </div>
     <div class="gallery">
-      <div class="g-item g-tall reveal"><img src="images/detail-cables.webp" alt="Integrated cable management with protective sleeves" loading="lazy"><div class="cap">Cable management</div></div>
-      <div class="g-item g-wide reveal d1"><img src="images/detail-seat.webp" alt="Playseat racing seat detail" loading="lazy"><div class="cap">Racing seat</div></div>
-      <div class="g-item reveal d2"><img src="images/detail-latch.webp" alt="Butterfly latches and recessed handles" loading="lazy"><div class="cap">Touring hardware</div></div>
-      <div class="g-item reveal d3"><img src="images/detail-panel.webp" alt="Hexagonal anti-slip surface finish" loading="lazy"><div class="cap">Surface finish</div></div>
-      <div class="g-item g-wide reveal d1"><img src="images/side.webp" alt="Side profile of the deployed SIMBOX simulator" loading="lazy" style="object-position: center 40%;"><div class="cap">Full profile</div></div>
-      <div class="g-item reveal d2"><img src="images/inside-case.webp" alt="Ventilated PC compartment with foam padding" loading="lazy"><div class="cap">PC compartment</div></div>
+      <div class="g-item g-tall reveal"><img src="images/detail-cables.webp" alt="Integrated cable management with protective sleeves" loading="lazy"><div class="cap" data-i18n="gallery.cap1">Cable management</div></div>
+      <div class="g-item g-wide reveal d1"><img src="images/detail-seat.webp" alt="Playseat racing seat detail" loading="lazy"><div class="cap" data-i18n="gallery.cap2">Racing seat</div></div>
+      <div class="g-item reveal d2"><img src="images/detail-latch.webp" alt="Butterfly latches and recessed handles" loading="lazy"><div class="cap" data-i18n="gallery.cap3">Touring hardware</div></div>
+      <div class="g-item reveal d3"><img src="images/detail-panel.webp" alt="Hexagonal anti-slip surface finish" loading="lazy"><div class="cap" data-i18n="gallery.cap4">Surface finish</div></div>
+      <div class="g-item g-wide reveal d1"><img src="images/side.webp" alt="Side profile of the deployed SIMBOX simulator" loading="lazy" style="object-position: center 40%;"><div class="cap" data-i18n="gallery.cap5">Full profile</div></div>
+      <div class="g-item reveal d2"><img src="images/inside-case.webp" alt="Ventilated PC compartment with foam padding" loading="lazy"><div class="cap" data-i18n="gallery.cap6">PC compartment</div></div>
     </div>
   </div>
 </section>
@@ -1117,13 +1143,13 @@
 <section id="view3d">
   <div class="wrap">
     <div class="sec-head center reveal">
-      <div class="sec-tag">Interactive 3D</div>
-      <h2>Turn it around. Open it up.</h2>
-      <p>Explore the SIMBOX in 3D — it spins on its own, or grab it and look from any angle.</p>
+      <div class="sec-tag" data-i18n="view3d.tag">Interactive 3D</div>
+      <h2 data-i18n="view3d.h2">Turn it around. Open it up.</h2>
+      <p data-i18n="view3d.p">Explore the SIMBOX in 3D — it spins on its own, or grab it and look from any angle.</p>
     </div>
     <div class="view-toggle reveal">
-      <button class="active" data-view="closed">Packed for transport</button>
-      <button data-view="opened">Deployed</button>
+      <button class="active" data-view="closed" data-i18n="view3d.closed">Packed for transport</button>
+      <button data-view="opened" data-i18n="view3d.opened">Deployed</button>
     </div>
     <div class="viewer-shell reveal">
       <model-viewer id="simboxViewer"
@@ -1141,7 +1167,7 @@
         interaction-prompt="none"
         camera-orbit="35deg 78deg auto">
       </model-viewer>
-      <div class="viewer-hint">Drag to rotate</div>
+      <div class="viewer-hint" data-i18n="view3d.hint">Drag to rotate</div>
     </div>
   </div>
 </section>
@@ -1151,28 +1177,28 @@
   <div class="wrap">
     <div class="mob-grid">
       <div class="reveal">
-        <div class="sec-tag">Mobility</div>
-        <h2 style="font-size: clamp(1.8rem, 4vw, 2.4rem);">Closes into a box.<br>Travels anywhere.</h2>
+        <div class="sec-tag" data-i18n="mobility.tag">Mobility</div>
+        <h2 style="font-size: clamp(1.8rem, 4vw, 2.4rem);" data-i18n-html="mobility.h2">Closes into a box.<br>Travels anywhere.</h2>
         <div class="mob-points">
           <div class="mob-point">
             <div class="n">01</div>
             <div>
-              <h3>Fits a standard delivery van</h3>
-              <p>Designed for a classic L2H1 van — the case takes just two-thirds of the load space, the size of four euro pallets.</p>
+              <h3 data-i18n="mobility.p1.h">Fits a standard delivery van</h3>
+              <p data-i18n="mobility.p1.p">Designed for a classic L2H1 van — the case takes just two-thirds of the load space, the size of four euro pallets.</p>
             </div>
           </div>
           <div class="mob-point">
             <div class="n">02</div>
             <div>
-              <h3>Removable dolly &amp; skids</h3>
-              <p>A detachable wheel board and skids make loading effortless. Aluminium fittings and ball corners protect every edge.</p>
+              <h3 data-i18n="mobility.p2.h">Removable dolly &amp; skids</h3>
+              <p data-i18n="mobility.p2.p">A detachable wheel board and skids make loading effortless. Aluminium fittings and ball corners protect every edge.</p>
             </div>
           </div>
           <div class="mob-point">
             <div class="n">03</div>
             <div>
-              <h3>Road, rail or air</h3>
-              <p>Protective foam lining inside the concert-grade case allows safe transport by car, train or plane.</p>
+              <h3 data-i18n="mobility.p3.h">Road, rail or air</h3>
+              <p data-i18n="mobility.p3.p">Protective foam lining inside the concert-grade case allows safe transport by car, train or plane.</p>
             </div>
           </div>
         </div>
@@ -1188,26 +1214,26 @@
 <section id="models">
   <div class="wrap">
     <div class="sec-head center reveal">
-      <div class="sec-tag">The lineup</div>
-      <h2>Three simulators. One plug-in philosophy.</h2>
-      <p>Pick a model to see its brochure — every SIMBOX ships as a complete, event-ready package.</p>
+      <div class="sec-tag" data-i18n="models.tag">The lineup</div>
+      <h2 data-i18n="models.h2">Three simulators. One plug-in philosophy.</h2>
+      <p data-i18n="models.p">Pick a model to see its brochure — every SIMBOX ships as a complete, event-ready package.</p>
     </div>
 
     <div class="model-tabs reveal">
       <button class="model-tab active" data-model="rally">
         <div class="m-code">SB-R1</div>
         <h3>SIMBOX Rally</h3>
-        <div class="m-tag">Plug-in rally &amp; racing cockpit</div>
+        <div class="m-tag" data-i18n="models.tab1.tag">Plug-in rally &amp; racing cockpit</div>
       </button>
       <button class="model-tab" data-model="motion">
         <div class="m-code">SB-M1</div>
         <h3>SIMBOX Motion</h3>
-        <div class="m-tag">Full-motion racing platform</div>
+        <div class="m-tag" data-i18n="models.tab2.tag">Full-motion racing platform</div>
       </button>
       <button class="model-tab" data-model="flight">
         <div class="m-code">SB-F1</div>
         <h3>SIMBOX Flight</h3>
-        <div class="m-tag">Motion flight simulator</div>
+        <div class="m-tag" data-i18n="models.tab3.tag">Motion flight simulator</div>
       </button>
     </div>
 
@@ -1216,30 +1242,30 @@
         <div><img src="images/hero.webp" alt="SIMBOX Rally — plug-in racing cockpit on its flight case"></div>
         <div>
           <div class="sec-tag">Brochure · SIMBOX Rally</div>
-          <h3>The all-in-one rally cockpit</h3>
-          <p class="desc">The original SIMBOX: a complete rally simulator packed into a concert-grade flight case. MOZA R5 Direct Drive wheel, load-cell pedals, hydraulic-style handbrake and a 39″ curved OLED — plug in the power and play.</p>
+          <h3 data-i18n="models.rally.h">The all-in-one rally cockpit</h3>
+          <p class="desc" data-i18n="models.rally.desc">The original SIMBOX: a complete rally simulator packed into a concert-grade flight case. MOZA R5 Direct Drive wheel, load-cell pedals, hydraulic-style handbrake and a 39″ curved OLED — plug in the power and play.</p>
           <table class="model-spec">
-            <tr><td>Case length</td><td>193.5 cm <small style="color: var(--text-dim);">(194.5 with dolly)</small></td></tr>
-            <tr><td>Case width</td><td>99.5 cm <small style="color: var(--text-dim);">(101.5 with dolly)</small></td></tr>
-            <tr><td>Case height</td><td>124 cm <small style="color: var(--text-dim);">(139 with dolly)</small></td></tr>
-            <tr><td>Weight</td><td>250 kg</td></tr>
+            <tr><td data-i18n="models.spec.length">Case length</td><td>193.5 cm <small style="color: var(--text-dim);" data-i18n="models.rally.dolly1">(194.5 with dolly)</small></td></tr>
+            <tr><td data-i18n="models.spec.width">Case width</td><td>99.5 cm <small style="color: var(--text-dim);" data-i18n="models.rally.dolly2">(101.5 with dolly)</small></td></tr>
+            <tr><td data-i18n="models.spec.height">Case height</td><td>124 cm <small style="color: var(--text-dim);" data-i18n="models.rally.dolly3">(139 with dolly)</small></td></tr>
+            <tr><td data-i18n="models.spec.weight">Weight</td><td>250 kg</td></tr>
           </table>
-          <div class="included-head"><span class="lbl">What's included</span><span class="badge-custom">Fully customizable</span></div>
+          <div class="included-head"><span class="lbl" data-i18n="models.includedLbl">What's included</span><span class="badge-custom" data-i18n="models.customBadge">Fully customizable</span></div>
           <ul class="model-included">
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Playseat professional racing seat</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>MOZA R5 Direct Drive bundle</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>MOZA SR-P Lite pedals</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>MOZA HBP handbrake</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>MOZA ES wheel + 12″ mod</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>LG 39″ curved OLED display</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Gaming PC — RTX 4060 Ti</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Creative soundbar</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Logitech keyboard + cable management</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="models.rally.i1">Playseat professional racing seat</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="models.rally.i2">MOZA R5 Direct Drive bundle</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="models.rally.i3">MOZA SR-P Lite pedals</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="models.rally.i4">MOZA HBP handbrake</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="models.rally.i5">MOZA ES wheel + 12″ mod</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="models.rally.i6">LG 39″ curved OLED display</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="models.rally.i7">Gaming PC — RTX 4060 Ti</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="models.rally.i8">Creative soundbar</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="models.rally.i9">Logitech keyboard + cable management</span></li>
           </ul>
-          <p class="custom-note"><strong>Fully customizable</strong> — every component can be swapped or upgraded to match your event and budget.</p>
+          <p class="custom-note" data-i18n-html="models.customNote"><strong>Fully customizable</strong> — every component can be swapped or upgraded to match your event and budget.</p>
           <a href="#" class="btn btn-primary btn-download" data-brochure="rally">
             <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-            Download brochure
+            <span data-i18n="common.downloadBrochure">Download brochure</span>
           </a>
         </div>
       </div>
@@ -1250,29 +1276,29 @@
         <div><img src="images/model-motion.webp" alt="SIMBOX Motion — full-motion platform with Sparco seat" loading="lazy"></div>
         <div>
           <div class="sec-tag">Brochure · SIMBOX Motion</div>
-          <h3>Feel every bump, drift and jump</h3>
-          <p class="desc">A professional 6-DOF motion platform paired with a Sparco racing seat and curved display. Every acceleration, kerb and surface change is translated into real movement — the ultimate crowd magnet for any event.</p>
+          <h3 data-i18n="models.motion.h">Feel every bump, drift and jump</h3>
+          <p class="desc" data-i18n="models.motion.desc">A professional 6-DOF motion platform paired with a Sparco racing seat and curved display. Every acceleration, kerb and surface change is translated into real movement — the ultimate crowd magnet for any event.</p>
           <table class="model-spec">
-            <tr><td>Case length</td><td>168.5 cm</td></tr>
-            <tr><td>Case width</td><td>97.5 cm</td></tr>
-            <tr><td>Case height</td><td>136 cm <small style="color: var(--text-dim);">(151.5 with dolly)</small></td></tr>
-            <tr><td>Weight</td><td>270 kg</td></tr>
+            <tr><td data-i18n="models.spec.length">Case length</td><td>168.5 cm</td></tr>
+            <tr><td data-i18n="models.spec.width">Case width</td><td>97.5 cm</td></tr>
+            <tr><td data-i18n="models.spec.height">Case height</td><td>136 cm <small style="color: var(--text-dim);" data-i18n="models.motion.dolly">(151.5 with dolly)</small></td></tr>
+            <tr><td data-i18n="models.spec.weight">Weight</td><td>270 kg</td></tr>
           </table>
-          <div class="included-head"><span class="lbl">What's included</span><span class="badge-custom">Fully customizable</span></div>
+          <div class="included-head"><span class="lbl" data-i18n="models.includedLbl">What's included</span><span class="badge-custom" data-i18n="models.customBadge">Fully customizable</span></div>
           <ul class="model-included">
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>DOF Reality 6-DOF motion platform</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Sparco PRO 2000 racing seat</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>MOZA Direct Drive wheel</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Load-cell pedal set</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>4-point safety harness</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>LG 39″ curved OLED display</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Gaming PC — RTX 4070</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Surround sound system</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="models.motion.i1">DOF Reality 6-DOF motion platform</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="models.motion.i2">Sparco PRO 2000 racing seat</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="models.motion.i3">MOZA Direct Drive wheel</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="models.motion.i4">Load-cell pedal set</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="models.motion.i5">4-point safety harness</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="models.rally.i6">LG 39″ curved OLED display</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="models.motion.i7">Gaming PC — RTX 4070</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="models.motion.i8">Surround sound system</span></li>
           </ul>
-          <p class="custom-note"><strong>Fully customizable</strong> — every component can be swapped or upgraded to match your event and budget.</p>
+          <p class="custom-note" data-i18n-html="models.customNote"><strong>Fully customizable</strong> — every component can be swapped or upgraded to match your event and budget.</p>
           <a href="#" class="btn btn-primary btn-download" data-brochure="motion">
             <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-            Download brochure
+            <span data-i18n="common.downloadBrochure">Download brochure</span>
           </a>
         </div>
       </div>
@@ -1283,29 +1309,29 @@
         <div><img src="images/model-flight.webp" alt="SIMBOX Flight — motion flight simulator with HOTAS controls" loading="lazy"></div>
         <div>
           <div class="sec-tag">Brochure · SIMBOX Flight</div>
-          <h3>Take off from the show floor</h3>
-          <p class="desc">The motion platform configured for aviation: HOTAS throttle and stick, rudder pedals and a wide curved display. From airliners to fighter jets — a full-motion flight experience wherever your event lands.</p>
+          <h3 data-i18n="models.flight.h">Take off from the show floor</h3>
+          <p class="desc" data-i18n="models.flight.desc">The motion platform configured for aviation: HOTAS throttle and stick, rudder pedals and a wide curved display. From airliners to fighter jets — a full-motion flight experience wherever your event lands.</p>
           <table class="model-spec">
-            <tr><td>Case length</td><td>169 cm</td></tr>
-            <tr><td>Case width</td><td>98 cm</td></tr>
-            <tr><td>Case height</td><td>137 cm <small style="color: var(--text-dim);">(149.5 with dolly)</small></td></tr>
-            <tr><td>Weight</td><td>280 kg</td></tr>
+            <tr><td data-i18n="models.spec.length">Case length</td><td>169 cm</td></tr>
+            <tr><td data-i18n="models.spec.width">Case width</td><td>98 cm</td></tr>
+            <tr><td data-i18n="models.spec.height">Case height</td><td>137 cm <small style="color: var(--text-dim);" data-i18n="models.flight.dolly">(149.5 with dolly)</small></td></tr>
+            <tr><td data-i18n="models.spec.weight">Weight</td><td>280 kg</td></tr>
           </table>
-          <div class="included-head"><span class="lbl">What's included</span><span class="badge-custom">Fully customizable</span></div>
+          <div class="included-head"><span class="lbl" data-i18n="models.includedLbl">What's included</span><span class="badge-custom" data-i18n="models.customBadge">Fully customizable</span></div>
           <ul class="model-included">
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>DOF Reality 6-DOF motion platform</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Sparco PRO 2000 racing seat</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>HOTAS throttle &amp; flight stick</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Rudder pedals</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Flight instrument panel</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>LG 39″ curved OLED display</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Gaming PC — RTX 4070</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Aviation headset</li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="models.motion.i1">DOF Reality 6-DOF motion platform</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="models.motion.i2">Sparco PRO 2000 racing seat</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="models.flight.i3">HOTAS throttle &amp; flight stick</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="models.flight.i4">Rudder pedals</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="models.flight.i5">Flight instrument panel</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="models.rally.i6">LG 39″ curved OLED display</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="models.motion.i7">Gaming PC — RTX 4070</span></li>
+            <li><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="models.flight.i8">Aviation headset</span></li>
           </ul>
-          <p class="custom-note"><strong>Fully customizable</strong> — every component can be swapped or upgraded to match your event and budget.</p>
+          <p class="custom-note" data-i18n-html="models.customNote"><strong>Fully customizable</strong> — every component can be swapped or upgraded to match your event and budget.</p>
           <a href="#" class="btn btn-primary btn-download" data-brochure="flight">
             <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-            Download brochure
+            <span data-i18n="common.downloadBrochure">Download brochure</span>
           </a>
         </div>
       </div>
@@ -1318,43 +1344,43 @@
   <div class="wrap">
     <div class="brand-grid">
       <div class="reveal">
-        <div class="sec-tag">Custom branding</div>
-        <h2 style="font-size: clamp(1.8rem, 4vw, 2.4rem);">Your brand on every surface</h2>
-        <p style="color: var(--text-dim); margin-top: 14px;">Every SIMBOX is built to order — and branded to order. We turn the simulator into a rolling billboard for your company, from the flight case to the in-game screens.</p>
+        <div class="sec-tag" data-i18n="branding.tag">Custom branding</div>
+        <h2 style="font-size: clamp(1.8rem, 4vw, 2.4rem);" data-i18n="branding.h2">Your brand on every surface</h2>
+        <p style="color: var(--text-dim); margin-top: 14px;" data-i18n="branding.p">Every SIMBOX is built to order — and branded to order. We turn the simulator into a rolling billboard for your company, from the flight case to the in-game screens.</p>
         <div class="brand-points">
           <div class="brand-point">
             <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m12 19 7-7 3 3-7 7-3-3z"/><path d="m18 13-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"/><path d="m2 2 7.586 7.586"/><circle cx="11" cy="11" r="2"/></svg></div>
             <div>
-              <h3>Full vinyl wrap</h3>
-              <p>Case, rig and monitor shroud wrapped in your colors and logos — designed by our studio, approved by you.</p>
+              <h3 data-i18n="branding.b1.h">Full vinyl wrap</h3>
+              <p data-i18n="branding.b1.p">Case, rig and monitor shroud wrapped in your colors and logos — designed by our studio, approved by you.</p>
             </div>
           </div>
           <div class="brand-point">
             <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg></div>
             <div>
-              <h3>Branded screens &amp; overlays</h3>
-              <p>Custom boot animation, menu skin, leaderboard and in-game overlays carrying your identity at every glance.</p>
+              <h3 data-i18n="branding.b2.h">Branded screens &amp; overlays</h3>
+              <p data-i18n="branding.b2.p">Custom boot animation, menu skin, leaderboard and in-game overlays carrying your identity at every glance.</p>
             </div>
           </div>
           <div class="brand-point">
             <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r=".5"/><circle cx="17.5" cy="10.5" r=".5"/><circle cx="8.5" cy="7.5" r=".5"/><circle cx="6.5" cy="12.5" r=".5"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg></div>
             <div>
-              <h3>Custom color accents</h3>
-              <p>Seat stitching, RGB lighting, powder-coated frame details — matched to your brand book.</p>
+              <h3 data-i18n="branding.b3.h">Custom color accents</h3>
+              <p data-i18n="branding.b3.p">Seat stitching, RGB lighting, powder-coated frame details — matched to your brand book.</p>
             </div>
           </div>
           <div class="brand-point">
             <div class="icon"><svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20h9M16.5 3.5a2.12 2.12 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
             <div>
-              <h3>Engraved &amp; printed panels</h3>
-              <p>Laser-engraved logo plates and printed case panels for a finish that survives years on the road.</p>
+              <h3 data-i18n="branding.b4.h">Engraved &amp; printed panels</h3>
+              <p data-i18n="branding.b4.p">Laser-engraved logo plates and printed case panels for a finish that survives years on the road.</p>
             </div>
           </div>
         </div>
       </div>
       <div class="brand-img reveal d1">
         <img src="images/case-closed.webp" alt="Example of a custom-branded SIMBOX flight case" loading="lazy">
-        <div class="tag">Example: custom-branded case</div>
+        <div class="tag" data-i18n="branding.imgTag">Example: custom-branded case</div>
       </div>
     </div>
   </div>
@@ -1364,55 +1390,55 @@
 <section id="invest">
   <div class="wrap">
     <div class="sec-head center reveal">
-      <div class="sec-tag">Case study · Investment</div>
-      <h2>A simulator that pays for itself</h2>
-      <p>SIMBOX isn't just a showpiece — it's rental inventory. Event agencies charge premium day rates for simulator activations. See how fast yours breaks even.</p>
+      <div class="sec-tag" data-i18n="invest.tag">Case study · Investment</div>
+      <h2 data-i18n="invest.h2">A simulator that pays for itself</h2>
+      <p data-i18n="invest.p">SIMBOX isn't just a showpiece — it's rental inventory. Event agencies charge premium day rates for simulator activations. See how fast yours breaks even.</p>
     </div>
 
     <div class="case-card reveal">
       <div>
-        <blockquote>"We booked the SIMBOX Rally for 34 events in the first year — trade fairs, product launches, team days. It paid for itself before month nine."</blockquote>
-        <div class="who">— Event agency, Warsaw · SIMBOX Rally, season 2025 <em>(illustrative case study)</em></div>
+        <blockquote data-i18n="invest.quote">"We booked the SIMBOX Rally for 34 events in the first year — trade fairs, product launches, team days. It paid for itself before month nine."</blockquote>
+        <div class="who" data-i18n-html="invest.who">— Event agency, Warsaw · SIMBOX Rally, season 2025 <em>(illustrative case study)</em></div>
       </div>
       <div class="case-stats">
-        <div class="case-stat"><div class="v">34</div><div class="l">events, year one</div></div>
-        <div class="case-stat"><div class="v">€1,400</div><div class="l">avg. day rate</div></div>
-        <div class="case-stat"><div class="v">9 mo</div><div class="l">to break even</div></div>
-        <div class="case-stat"><div class="v">+36%</div><div class="l">ROI, year one</div></div>
+        <div class="case-stat"><div class="v">34</div><div class="l" data-i18n="invest.stat1">events, year one</div></div>
+        <div class="case-stat"><div class="v" data-i18n="invest.stat2val">€1,400</div><div class="l" data-i18n="invest.stat2">avg. day rate</div></div>
+        <div class="case-stat"><div class="v" data-i18n="invest.stat3val">9 mo</div><div class="l" data-i18n="invest.stat3">to break even</div></div>
+        <div class="case-stat"><div class="v">+36%</div><div class="l" data-i18n="invest.stat4">ROI, year one</div></div>
       </div>
     </div>
 
     <div class="invest-card reveal d1">
       <div class="invest-head">
-        <h3>Run your own numbers</h3>
-        <div class="invest-price">Purchase price: <strong id="calcPrice">€34,900</strong></div>
+        <h3 data-i18n="invest.calcH">Run your own numbers</h3>
+        <div class="invest-price"><span data-i18n="invest.purchasePrice">Purchase price:</span> <strong id="calcPrice">€34,900</strong></div>
       </div>
 
       <div class="invest-pills" id="calcModels">
-        <button class="active" data-price="34900" data-rate="1200">SIMBOX Rally</button>
-        <button data-price="44900" data-rate="1500">SIMBOX F1</button>
-        <button data-price="54900" data-rate="1900">SIMBOX Motion</button>
-        <button data-price="57900" data-rate="2100">SIMBOX Flight</button>
+        <button class="active" data-price-eur="34900" data-rate-eur="1200" data-price-pln="149900" data-rate-pln="5000">SIMBOX Rally</button>
+        <button data-price-eur="44900" data-rate-eur="1500" data-price-pln="189900" data-rate-pln="6500">SIMBOX F1</button>
+        <button data-price-eur="54900" data-rate-eur="1900" data-price-pln="234900" data-rate-pln="8000">SIMBOX Motion</button>
+        <button data-price-eur="57900" data-rate-eur="2100" data-price-pln="249900" data-rate-pln="9000">SIMBOX Flight</button>
       </div>
 
       <div class="slider-label">
-        <span class="lbl">Your rental day rate</span>
-        <span class="val" id="calcRate">€1,200 <small>/ event day</small></span>
+        <span class="lbl" data-i18n="invest.sliderLbl">Your rental day rate</span>
+        <span class="val" id="calcRate">€1,200 <small data-i18n="invest.perDay">/ event day</small></span>
       </div>
       <input type="range" class="price-slider" id="calcSlider" min="500" max="4000" step="50" value="1200">
       <div class="zone-labels">
-        <span class="g">High demand</span>
-        <span class="y">Market rate</span>
-        <span class="r">Premium</span>
+        <span class="g" data-i18n="invest.zoneHigh">High demand</span>
+        <span class="y" data-i18n="invest.zoneMarket">Market rate</span>
+        <span class="r" data-i18n="invest.zonePremium">Premium</span>
       </div>
 
       <div class="roi-grid">
-        <div class="roi-tile hl"><div class="v" id="outEvents">30</div><div class="l">rentals to break even</div></div>
-        <div class="roi-tile"><div class="v" id="outMonthly">6 <span>/ month</span></div><div class="l">est. bookings at this rate</div></div>
-        <div class="roi-tile"><div class="v" id="outPayback">5 <span>months</span></div><div class="l">est. payback time</div></div>
-        <div class="roi-tile"><div class="v" id="outYear1">+€51k</div><div class="l">est. year-one net</div></div>
+        <div class="roi-tile hl"><div class="v" id="outEvents">30</div><div class="l" data-i18n="invest.out1">rentals to break even</div></div>
+        <div class="roi-tile"><div class="v" id="outMonthly">6 <span data-i18n="invest.perMonth">/ month</span></div><div class="l" data-i18n="invest.out2">est. bookings at this rate</div></div>
+        <div class="roi-tile"><div class="v" id="outPayback">5 <span id="outPaybackUnit" data-i18n="invest.months">months</span></div><div class="l" data-i18n="invest.out3">est. payback time</div></div>
+        <div class="roi-tile"><div class="v" id="outYear1">+€51k</div><div class="l" data-i18n="invest.out4">est. year-one net</div></div>
       </div>
-      <p class="invest-note">* Sample calculation with illustrative prices. Booking assumption: demand eases smoothly from ≈ 6 rentals/month at budget pricing to ≈ 3.5 at premium. Actual results depend on your market, sales and season. Purchase prices shown are examples — contact us for a quote.</p>
+      <p class="invest-note" data-i18n="invest.note">* Sample calculation with illustrative prices. Booking assumption: demand eases smoothly from ≈ 6 rentals/month at budget pricing to ≈ 3.5 at premium. Actual results depend on your market, sales and season. Purchase prices shown are examples — contact us for a quote.</p>
     </div>
 
     <div class="finance-card reveal d2">
@@ -1420,15 +1446,15 @@
         <img src="images/efl logo.svg" alt="EFL — Crédit Agricole Group leasing" width="110" height="68">
       </div>
       <div class="finance-body">
-        <h3>Financing available through EFL</h3>
-        <p>You don't have to buy your SIMBOX outright. In partnership with EFL (Crédit Agricole Group) we offer leasing and installment plans — so your rental revenue covers the monthly payments from day one.</p>
+        <h3 data-i18n="invest.financeH">Financing available through EFL</h3>
+        <p data-i18n="invest.financeP">You don't have to buy your SIMBOX outright. In partnership with EFL (Crédit Agricole Group) we offer leasing and installment plans — so your rental revenue covers the monthly payments from day one.</p>
         <div class="finance-points">
-          <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Leasing &amp; installment plans</span>
-          <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Fast, simple financing decision</span>
-          <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>Terms tailored to your business</span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="invest.fp1">Leasing &amp; installment plans</span></span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="invest.fp2">Fast, simple financing decision</span></span>
+          <span><svg viewBox="0 0 24 24" fill="none" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg><span data-i18n="invest.fp3">Terms tailored to your business</span></span>
         </div>
       </div>
-      <a href="#contact" class="btn btn-ghost finance-cta">Ask about financing</a>
+      <a href="#contact" class="btn btn-ghost finance-cta" data-i18n="invest.financeCta">Ask about financing</a>
     </div>
   </div>
 </section>
@@ -1438,36 +1464,36 @@
   <div class="wrap">
     <div class="sec-head center reveal">
       <div class="sec-tag">FAQ</div>
-      <h2>Frequently asked questions</h2>
+      <h2 data-i18n="faq.h2">Frequently asked questions</h2>
     </div>
     <div class="faq-list reveal">
       <details class="faq-item">
-        <summary>What is SIMBOX?</summary>
-        <div class="a">SIMBOX is a complete, plug-in racing or flight simulator built into a concert-grade flight case. Wheel, pedals, racing seat, curved display, gaming PC and sound system are pre-assembled and pre-cabled — you plug in the power and play. It's designed for trade fairs, brand activations, product launches and sim racing events.</div>
+        <summary data-i18n="faq.q1">What is SIMBOX?</summary>
+        <div class="a" data-i18n="faq.a1">SIMBOX is a complete, plug-in racing or flight simulator built into a concert-grade flight case. Wheel, pedals, racing seat, curved display, gaming PC and sound system are pre-assembled and pre-cabled — you plug in the power and play. It's designed for trade fairs, brand activations, product launches and sim racing events.</div>
       </details>
       <details class="faq-item">
-        <summary>Which SIMBOX models are available?</summary>
-        <div class="a">Four models: SIMBOX Rally (plug-in rally cockpit), SIMBOX F1 (formula-style cockpit), SIMBOX Motion (full-motion racing platform on a 3/4-DOF motion base) and SIMBOX Flight (full-motion flight simulator with HOTAS controls). Every configuration is fully customizable — components can be swapped or upgraded to match your event and budget.</div>
+        <summary data-i18n="faq.q2">Which SIMBOX models are available?</summary>
+        <div class="a" data-i18n="faq.a2">Four models: SIMBOX Rally (plug-in rally cockpit), SIMBOX F1 (formula-style cockpit), SIMBOX Motion (full-motion racing platform on a 3/4-DOF motion base) and SIMBOX Flight (full-motion flight simulator with HOTAS controls). Every configuration is fully customizable — components can be swapped or upgraded to match your event and budget.</div>
       </details>
       <details class="faq-item">
-        <summary>How long does setup take at an event?</summary>
-        <div class="a">Minutes, not hours. The simulator ships assembled inside its case — there is no cabling and no configuration on site. Open the case, plug in a single power connection and the system is ready to run.</div>
+        <summary data-i18n="faq.q3">How long does setup take at an event?</summary>
+        <div class="a" data-i18n="faq.a3">Minutes, not hours. The simulator ships assembled inside its case — there is no cabling and no configuration on site. Open the case, plug in a single power connection and the system is ready to run.</div>
       </details>
       <details class="faq-item">
-        <summary>How is SIMBOX transported?</summary>
-        <div class="a">The closed case fits a standard L2H1 delivery van and rolls on a removable dolly with skids. Aluminium fittings, ball corners and internal protective foam make it safe to transport by road, rail or air — it's built to the same standards as touring concert equipment.</div>
+        <summary data-i18n="faq.q4">How is SIMBOX transported?</summary>
+        <div class="a" data-i18n="faq.a4">The closed case fits a standard L2H1 delivery van and rolls on a removable dolly with skids. Aluminium fittings, ball corners and internal protective foam make it safe to transport by road, rail or air — it's built to the same standards as touring concert equipment.</div>
       </details>
       <details class="faq-item">
-        <summary>Can SIMBOX be branded with my company's identity?</summary>
-        <div class="a">Yes. We offer full custom branding: vinyl wraps of the case and rig, branded boot screens and in-game overlays, leaderboards with your logo, custom color accents and laser-engraved panels — all designed to your brand book.</div>
+        <summary data-i18n="faq.q5">Can SIMBOX be branded with my company's identity?</summary>
+        <div class="a" data-i18n="faq.a5">Yes. We offer full custom branding: vinyl wraps of the case and rig, branded boot screens and in-game overlays, leaderboards with your logo, custom color accents and laser-engraved panels — all designed to your brand book.</div>
       </details>
       <details class="faq-item">
-        <summary>Is financing or leasing available?</summary>
-        <div class="a">Yes. In partnership with EFL (Crédit Agricole Group) we offer leasing and installment plans with terms tailored to your business, so you can spread the cost while the simulator earns rental revenue.</div>
+        <summary data-i18n="faq.q6">Is financing or leasing available?</summary>
+        <div class="a" data-i18n="faq.a6">Yes. In partnership with EFL (Crédit Agricole Group) we offer leasing and installment plans with terms tailored to your business, so you can spread the cost while the simulator earns rental revenue.</div>
       </details>
       <details class="faq-item">
-        <summary>Can SIMBOX earn money as rental inventory?</summary>
-        <div class="a">Many owners rent their SIMBOX to event agencies and brands. Market day rates for event simulators typically range from several hundred to a few thousand euro per event day, depending on the model and market — our on-page calculator lets you estimate break-even for your own pricing.</div>
+        <summary data-i18n="faq.q7">Can SIMBOX earn money as rental inventory?</summary>
+        <div class="a" data-i18n="faq.a7">Many owners rent their SIMBOX to event agencies and brands. Market day rates for event simulators typically range from several hundred to a few thousand euro per event day, depending on the model and market — our on-page calculator lets you estimate break-even for your own pricing.</div>
       </details>
     </div>
   </div>
@@ -1492,9 +1518,9 @@
 <section id="contact">
   <div class="wrap">
     <div class="reveal">
-      <div class="sec-tag">Contact</div>
-      <h2>Bring SIMBOX to your next event</h2>
-      <p class="sub">Tell us about your trade fair, launch or sim racing event — we'll take care of the rest.</p>
+      <div class="sec-tag" data-i18n="contact.tag">Contact</div>
+      <h2 data-i18n="contact.h2">Bring SIMBOX to your next event</h2>
+      <p class="sub" data-i18n="contact.sub">Tell us about your trade fair, launch or sim racing event — we'll take care of the rest.</p>
     </div>
     <div class="contact-links reveal d1">
       <a class="contact-card" href="mailto:contact@simboxpro.com">
@@ -1511,44 +1537,44 @@
       <input type="text" name="_honey" style="display:none" tabindex="-1" autocomplete="off">
       <div class="form-row">
         <div class="field">
-          <label for="f-name">Name</label>
+          <label for="f-name" data-i18n="form.name">Name</label>
           <input type="text" id="f-name" name="name" placeholder="John Smith" required>
         </div>
         <div class="field">
-          <label for="f-company">Company</label>
-          <input type="text" id="f-company" name="company" placeholder="Your company">
+          <label for="f-company" data-i18n="form.company">Company</label>
+          <input type="text" id="f-company" name="company" placeholder="Your company" data-i18n-placeholder="form.companyPh">
         </div>
       </div>
       <div class="form-row">
         <div class="field">
-          <label for="f-email">Email</label>
+          <label for="f-email" data-i18n="form.email">Email</label>
           <input type="email" id="f-email" name="email" placeholder="you@company.com" required>
         </div>
         <div class="field">
-          <label for="f-phone">Phone</label>
+          <label for="f-phone" data-i18n="form.phone">Phone</label>
           <input type="tel" id="f-phone" name="phone" placeholder="+48 600 000 000">
         </div>
       </div>
       <div class="field">
-        <label for="f-model">I'm interested in</label>
+        <label for="f-model" data-i18n="form.interest">I'm interested in</label>
         <select id="f-model" name="model">
           <option value="rally">SIMBOX Rally</option>
           <option value="motion">SIMBOX Motion</option>
           <option value="flight">SIMBOX Flight</option>
-          <option value="other">Not sure yet</option>
+          <option value="other" data-i18n="form.notSure">Not sure yet</option>
         </select>
       </div>
       <div class="field">
-        <label for="f-message">Message</label>
-        <textarea id="f-message" name="message" placeholder="Tell us about your event — date, location, audience…"></textarea>
+        <label for="f-message" data-i18n="form.message">Message</label>
+        <textarea id="f-message" name="message" placeholder="Tell us about your event — date, location, audience…" data-i18n-placeholder="form.messagePh"></textarea>
       </div>
       <div class="form-actions">
-        <button type="submit" class="btn btn-primary">Send message</button>
+        <button type="submit" class="btn btn-primary" data-i18n="form.send">Send message</button>
         <a href="#" class="btn btn-ghost btn-download" data-brochure="general">
           <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-          Download brochure
+          <span data-i18n="common.downloadBrochure">Download brochure</span>
         </a>
-        <span class="form-sent" id="formSent">Thanks! We'll get back to you shortly.</span>
+        <span class="form-sent" id="formSent" data-i18n="form.thanks">Thanks! We'll get back to you shortly.</span>
       </div>
     </form>
   </div>
@@ -1556,21 +1582,295 @@
 
 <footer>
   <div class="wrap">
-    © 2026 SIMBOXPRO — Complete plug-in solution for trade fairs and sim racing events
+    <span data-i18n="footer.copy">© 2026 SIMBOXPRO — Complete plug-in solution for trade fairs and sim racing events</span>
     &nbsp;·&nbsp;
-    <button id="cookieSettingsLink" type="button">Cookie settings</button>
+    <button id="cookieSettingsLink" type="button" data-i18n="footer.cookieSettings">Cookie settings</button>
   </div>
 </footer>
 
 <div id="cookieNotice" role="dialog" aria-label="Cookie notice">
-  <p>We use essential local storage to run this site, plus optional analytics cookies (Google Analytics) to see how visitors use it. Analytics only loads if you accept. <a href="mailto:contact@simboxpro.com">Questions? Get in touch.</a></p>
+  <p data-i18n-html="cookie.text">We use essential local storage to run this site, plus optional analytics cookies (Google Analytics) to see how visitors use it. Analytics only loads if you accept. <a href="mailto:contact@simboxpro.com">Questions? Get in touch.</a></p>
   <div class="cookie-actions">
-    <button id="cookieAccept" type="button">Accept</button>
-    <button id="cookieDecline" type="button">Decline</button>
+    <button id="cookieAccept" type="button" data-i18n="cookie.accept">Accept</button>
+    <button id="cookieDecline" type="button" data-i18n="cookie.decline">Decline</button>
   </div>
 </div>
 
 <script>
+  // ---------------------------------------------------------------
+  // i18n dictionary (EN / PL) — prices in EUR for EN, PLN for PL
+  // ---------------------------------------------------------------
+  const I18N = {
+    en: {
+      "nav.about": "About", "nav.spec": "Specification", "nav.gallery": "Gallery",
+      "nav.models": "Models", "nav.view3d": "3D View", "nav.contact": "Contact",
+      "hero.eyebrow": "Complete plug-in solution",
+      "hero.title": "The all-in-one racing simulator.<br><em>Plug in the power and play.</em>",
+      "hero.lead": "SIMBOX Rally is a complete, ready-to-run simulator built for trade fairs and sim racing events — no cables, no complex logistics, no long setup.",
+      "hero.cta1": "Request a quote", "hero.cta2": "See specification",
+      "stats.length": "Length in use", "stats.width": "Width", "stats.height": "Height in use", "stats.weight": "Weight, packed",
+      "about.tag": "Why SIMBOX",
+      "about.h2": "Everything you need, in one perfectly engineered box",
+      "about.p": "Top-quality components — wheel, pedals, monitor, computer and a professional racing seat — form one harmonious unit, ready to go. When you're done, simply close the box and everything disappears.",
+      "about.f1.h": "All in One", "about.f1.p": "Everything you need in a single case — no assembly, no configuration. Plug in and play.",
+      "about.f2.h": "Premium Quality", "about.f2.p": "Built on components from the most renowned brands: Playseat, MOZA, LG, Creative, Logitech, Pimax.",
+      "about.f3.h": "Technology", "about.f3.p": "Direct Drive wheel base, OLED display, load-cell pedals, ActiFit-finished seat — optional 4K VR headset.",
+      "about.f4.h": "Concert-grade Case", "about.f4.p": "A flight case built to touring standards keeps the rig safe in use and in transport — by road, rail or air.",
+      "spec.tag": "Specification",
+      "spec.length": "Length in use", "spec.width": "Width", "spec.height": "Height in use", "spec.seatHeight": "Seat height",
+      "spec.caseDim": "Case dimensions (L×W×H)", "spec.caseDolly": "Case with dolly (L×W×H)", "spec.weight": "Weight, packed",
+      "spec.load": "Load capacity", "spec.loadVal": "up to 150 kg",
+      "spec.driverHeight": "Recommended driver height", "spec.driverHeightVal": "min. 120 cm / 47 in",
+      "spec.country": "Country of origin", "spec.countryVal": "Poland",
+      "spec.note": "* Specification may vary per configuration.",
+      "gallery.tag": "Details", "gallery.h2": "Engineered down to the last latch",
+      "gallery.cap1": "Cable management", "gallery.cap2": "Racing seat", "gallery.cap3": "Touring hardware",
+      "gallery.cap4": "Surface finish", "gallery.cap5": "Full profile", "gallery.cap6": "PC compartment",
+      "view3d.tag": "Interactive 3D", "view3d.h2": "Turn it around. Open it up.",
+      "view3d.p": "Explore the SIMBOX in 3D — it spins on its own, or grab it and look from any angle.",
+      "view3d.closed": "Packed for transport", "view3d.opened": "Deployed", "view3d.hint": "Drag to rotate",
+      "mobility.tag": "Mobility", "mobility.h2": "Closes into a box.<br>Travels anywhere.",
+      "mobility.p1.h": "Fits a standard delivery van",
+      "mobility.p1.p": "Designed for a classic L2H1 van — the case takes just two-thirds of the load space, the size of four euro pallets.",
+      "mobility.p2.h": "Removable dolly &amp; skids",
+      "mobility.p2.p": "A detachable wheel board and skids make loading effortless. Aluminium fittings and ball corners protect every edge.",
+      "mobility.p3.h": "Road, rail or air",
+      "mobility.p3.p": "Protective foam lining inside the concert-grade case allows safe transport by car, train or plane.",
+      "models.tag": "The lineup", "models.h2": "Three simulators. One plug-in philosophy.",
+      "models.p": "Pick a model to see its brochure — every SIMBOX ships as a complete, event-ready package.",
+      "models.tab1.tag": "Plug-in rally &amp; racing cockpit", "models.tab2.tag": "Full-motion racing platform", "models.tab3.tag": "Motion flight simulator",
+      "models.spec.length": "Case length", "models.spec.width": "Case width", "models.spec.height": "Case height", "models.spec.weight": "Weight",
+      "models.includedLbl": "What's included", "models.customBadge": "Fully customizable",
+      "models.customNote": "<strong>Fully customizable</strong> — every component can be swapped or upgraded to match your event and budget.",
+      "models.rally.h": "The all-in-one rally cockpit",
+      "models.rally.desc": "The original SIMBOX: a complete rally simulator packed into a concert-grade flight case. MOZA R5 Direct Drive wheel, load-cell pedals, hydraulic-style handbrake and a 39″ curved OLED — plug in the power and play.",
+      "models.rally.dolly1": "(194.5 with dolly)", "models.rally.dolly2": "(101.5 with dolly)", "models.rally.dolly3": "(139 with dolly)",
+      "models.rally.i1": "Playseat professional racing seat", "models.rally.i2": "MOZA R5 Direct Drive bundle",
+      "models.rally.i3": "MOZA SR-P Lite pedals", "models.rally.i4": "MOZA HBP handbrake",
+      "models.rally.i5": "MOZA ES wheel + 12″ mod", "models.rally.i6": "LG 39″ curved OLED display",
+      "models.rally.i7": "Gaming PC — RTX 4060 Ti", "models.rally.i8": "Creative soundbar",
+      "models.rally.i9": "Logitech keyboard + cable management",
+      "models.motion.h": "Feel every bump, drift and jump",
+      "models.motion.desc": "A professional 6-DOF motion platform paired with a Sparco racing seat and curved display. Every acceleration, kerb and surface change is translated into real movement — the ultimate crowd magnet for any event.",
+      "models.motion.dolly": "(151.5 with dolly)",
+      "models.motion.i1": "DOF Reality 6-DOF motion platform", "models.motion.i2": "Sparco PRO 2000 racing seat",
+      "models.motion.i3": "MOZA Direct Drive wheel", "models.motion.i4": "Load-cell pedal set",
+      "models.motion.i5": "4-point safety harness", "models.motion.i7": "Gaming PC — RTX 4070", "models.motion.i8": "Surround sound system",
+      "models.flight.h": "Take off from the show floor",
+      "models.flight.desc": "The motion platform configured for aviation: HOTAS throttle and stick, rudder pedals and a wide curved display. From airliners to fighter jets — a full-motion flight experience wherever your event lands.",
+      "models.flight.dolly": "(149.5 with dolly)",
+      "models.flight.i3": "HOTAS throttle &amp; flight stick", "models.flight.i4": "Rudder pedals",
+      "models.flight.i5": "Flight instrument panel", "models.flight.i8": "Aviation headset",
+      "branding.tag": "Custom branding", "branding.h2": "Your brand on every surface",
+      "branding.p": "Every SIMBOX is built to order — and branded to order. We turn the simulator into a rolling billboard for your company, from the flight case to the in-game screens.",
+      "branding.b1.h": "Full vinyl wrap", "branding.b1.p": "Case, rig and monitor shroud wrapped in your colors and logos — designed by our studio, approved by you.",
+      "branding.b2.h": "Branded screens &amp; overlays", "branding.b2.p": "Custom boot animation, menu skin, leaderboard and in-game overlays carrying your identity at every glance.",
+      "branding.b3.h": "Custom color accents", "branding.b3.p": "Seat stitching, RGB lighting, powder-coated frame details — matched to your brand book.",
+      "branding.b4.h": "Engraved &amp; printed panels", "branding.b4.p": "Laser-engraved logo plates and printed case panels for a finish that survives years on the road.",
+      "branding.imgTag": "Example: custom-branded case",
+      "invest.tag": "Case study · Investment", "invest.h2": "A simulator that pays for itself",
+      "invest.p": "SIMBOX isn't just a showpiece — it's rental inventory. Event agencies charge premium day rates for simulator activations. See how fast yours breaks even.",
+      "invest.quote": "“We booked the SIMBOX Rally for 34 events in the first year — trade fairs, product launches, team days. It paid for itself before month nine.”",
+      "invest.who": "— Event agency, Warsaw · SIMBOX Rally, season 2025 <em>(illustrative case study)</em>",
+      "invest.stat1": "events, year one", "invest.stat2": "avg. day rate", "invest.stat2val": "€1,400",
+      "invest.stat3": "to break even", "invest.stat3val": "9 mo", "invest.stat4": "ROI, year one",
+      "invest.calcH": "Run your own numbers", "invest.purchasePrice": "Purchase price:",
+      "invest.sliderLbl": "Your rental day rate", "invest.perDay": "/ event day",
+      "invest.zoneHigh": "High demand", "invest.zoneMarket": "Market rate", "invest.zonePremium": "Premium",
+      "invest.out1": "rentals to break even", "invest.perMonth": "/ month", "invest.out2": "est. bookings at this rate",
+      "invest.out3": "est. payback time", "invest.out4": "est. year-one net",
+      "invest.note": "* Sample calculation with illustrative prices. Booking assumption: demand eases smoothly from ≈ 6 rentals/month at budget pricing to ≈ 3.5 at premium. Actual results depend on your market, sales and season. Purchase prices shown are examples — contact us for a quote.",
+      "invest.financeH": "Financing available through EFL",
+      "invest.financeP": "You don't have to buy your SIMBOX outright. In partnership with EFL (Crédit Agricole Group) we offer leasing and installment plans — so your rental revenue covers the monthly payments from day one.",
+      "invest.fp1": "Leasing &amp; installment plans", "invest.fp2": "Fast, simple financing decision", "invest.fp3": "Terms tailored to your business",
+      "invest.financeCta": "Ask about financing",
+      "faq.h2": "Frequently asked questions",
+      "faq.q1": "What is SIMBOX?",
+      "faq.a1": "SIMBOX is a complete, plug-in racing or flight simulator built into a concert-grade flight case. Wheel, pedals, racing seat, curved display, gaming PC and sound system are pre-assembled and pre-cabled — you plug in the power and play. It's designed for trade fairs, brand activations, product launches and sim racing events.",
+      "faq.q2": "Which SIMBOX models are available?",
+      "faq.a2": "Four models: SIMBOX Rally (plug-in rally cockpit), SIMBOX F1 (formula-style cockpit), SIMBOX Motion (full-motion racing platform on a 3/4-DOF motion base) and SIMBOX Flight (full-motion flight simulator with HOTAS controls). Every configuration is fully customizable — components can be swapped or upgraded to match your event and budget.",
+      "faq.q3": "How long does setup take at an event?",
+      "faq.a3": "Minutes, not hours. The simulator ships assembled inside its case — there is no cabling and no configuration on site. Open the case, plug in a single power connection and the system is ready to run.",
+      "faq.q4": "How is SIMBOX transported?",
+      "faq.a4": "The closed case fits a standard L2H1 delivery van and rolls on a removable dolly with skids. Aluminium fittings, ball corners and internal protective foam make it safe to transport by road, rail or air — it's built to the same standards as touring concert equipment.",
+      "faq.q5": "Can SIMBOX be branded with my company's identity?",
+      "faq.a5": "Yes. We offer full custom branding: vinyl wraps of the case and rig, branded boot screens and in-game overlays, leaderboards with your logo, custom color accents and laser-engraved panels — all designed to your brand book.",
+      "faq.q6": "Is financing or leasing available?",
+      "faq.a6": "Yes. In partnership with EFL (Crédit Agricole Group) we offer leasing and installment plans with terms tailored to your business, so you can spread the cost while the simulator earns rental revenue.",
+      "faq.q7": "Can SIMBOX earn money as rental inventory?",
+      "faq.a7": "Many owners rent their SIMBOX to event agencies and brands. Market day rates for event simulators typically range from several hundred to a few thousand euro per event day, depending on the model and market — our on-page calculator lets you estimate break-even for your own pricing.",
+      "contact.tag": "Contact", "contact.h2": "Bring SIMBOX to your next event",
+      "contact.sub": "Tell us about your trade fair, launch or sim racing event — we'll take care of the rest.",
+      "form.name": "Name", "form.company": "Company", "form.companyPh": "Your company",
+      "form.email": "Email", "form.phone": "Phone", "form.interest": "I'm interested in", "form.notSure": "Not sure yet",
+      "form.message": "Message", "form.messagePh": "Tell us about your event — date, location, audience…",
+      "form.send": "Send message", "form.sending": "Sending…",
+      "form.thanks": "Thanks! We'll get back to you shortly.",
+      "form.thanksSent": "Thanks! Your message has been sent — we'll get back to you shortly.",
+      "form.errorMsg": "Something went wrong — please email us directly at contact@simboxpro.com.",
+      "common.downloadBrochure": "Download brochure",
+      "footer.copy": "© 2026 SIMBOXPRO — Complete plug-in solution for trade fairs and sim racing events",
+      "footer.cookieSettings": "Cookie settings",
+      "cookie.text": "We use essential local storage to run this site, plus optional analytics cookies (Google Analytics) to see how visitors use it. Analytics only loads if you accept. <a href=\"mailto:contact@simboxpro.com\">Questions? Get in touch.</a>",
+      "cookie.accept": "Accept", "cookie.decline": "Decline",
+      "meta.title": "SIMBOXPRO — Plug-in Racing & Flight Simulators for Events"
+    },
+    pl: {
+      "nav.about": "O nas", "nav.spec": "Specyfikacja", "nav.gallery": "Galeria",
+      "nav.models": "Modele", "nav.view3d": "Widok 3D", "nav.contact": "Kontakt",
+      "hero.eyebrow": "Kompletne rozwiązanie plug-in",
+      "hero.title": "Symulator wyścigowy typu wszystko-w-jednym.<br><em>Podłącz zasilanie i graj.</em>",
+      "hero.lead": "SIMBOX Rally to kompletny, gotowy do pracy symulator stworzony na targi i wydarzenia sim racingowe — bez kabli, bez skomplikowanej logistyki, bez długiego montażu.",
+      "hero.cta1": "Poproś o wycenę", "hero.cta2": "Zobacz specyfikację",
+      "stats.length": "Długość w użyciu", "stats.width": "Szerokość", "stats.height": "Wysokość w użyciu", "stats.weight": "Waga (spakowany)",
+      "about.tag": "Dlaczego SIMBOX",
+      "about.h2": "Wszystko czego potrzebujesz, w jednej perfekcyjnie zaprojektowanej skrzyni",
+      "about.p": "Komponenty najwyższej jakości — kierownica, pedały, monitor, komputer i profesjonalny fotel wyścigowy — tworzą jedną spójną całość, gotową do pracy. Gdy kończysz, po prostu zamykasz skrzynię i wszystko znika.",
+      "about.f1.h": "Wszystko w jednym", "about.f1.p": "Wszystko czego potrzebujesz w jednej skrzyni — bez montażu, bez konfiguracji. Podłącz i graj.",
+      "about.f2.h": "Najwyższa jakość", "about.f2.p": "Zbudowany z komponentów najbardziej uznanych marek: Playseat, MOZA, LG, Creative, Logitech, Pimax.",
+      "about.f3.h": "Technologia", "about.f3.p": "Baza kierownicy Direct Drive, wyświetlacz OLED, pedały z czujnikami obciążenia, fotel wykończony materiałem ActiFit — opcjonalnie gogle VR 4K.",
+      "about.f4.h": "Skrzynia klasy koncertowej", "about.f4.p": "Skrzynia transportowa zbudowana w standardzie touringowym chroni zestaw podczas użytkowania i transportu — drogą, koleją lub samolotem.",
+      "spec.tag": "Specyfikacja",
+      "spec.length": "Długość w użyciu", "spec.width": "Szerokość", "spec.height": "Wysokość w użyciu", "spec.seatHeight": "Wysokość siedziska",
+      "spec.caseDim": "Wymiary skrzyni (dł.×szer.×wys.)", "spec.caseDolly": "Skrzynia z wózkiem (dł.×szer.×wys.)", "spec.weight": "Waga (spakowany)",
+      "spec.load": "Udźwig", "spec.loadVal": "do 150 kg",
+      "spec.driverHeight": "Zalecany wzrost kierowcy", "spec.driverHeightVal": "min. 120 cm",
+      "spec.country": "Kraj pochodzenia", "spec.countryVal": "Polska",
+      "spec.note": "* Specyfikacja może się różnić w zależności od konfiguracji.",
+      "gallery.tag": "Detale", "gallery.h2": "Zaprojektowane z dbałością o każdy szczegół",
+      "gallery.cap1": "Organizacja okablowania", "gallery.cap2": "Fotel wyścigowy", "gallery.cap3": "Okucia touringowe",
+      "gallery.cap4": "Wykończenie powierzchni", "gallery.cap5": "Pełny profil", "gallery.cap6": "Komora komputera",
+      "view3d.tag": "Interaktywne 3D", "view3d.h2": "Obróć. Otwórz.",
+      "view3d.p": "Poznaj SIMBOX w 3D — obraca się samodzielnie, albo chwyć go i obejrzyj z dowolnego kąta.",
+      "view3d.closed": "Spakowany do transportu", "view3d.opened": "Rozłożony", "view3d.hint": "Przeciągnij, aby obrócić",
+      "mobility.tag": "Mobilność", "mobility.h2": "Zamyka się w skrzyni.<br>Jedzie wszędzie.",
+      "mobility.p1.h": "Mieści się w standardowym busie",
+      "mobility.p1.p": "Zaprojektowany pod klasyczny bus L2H1 — skrzynia zajmuje tylko dwie trzecie przestrzeni ładunkowej, czyli tyle co cztery europalety.",
+      "mobility.p2.h": "Zdejmowany wózek i płozy",
+      "mobility.p2.p": "Odpinana deskorolka na kółkach i płozy sprawiają, że załadunek jest bezproblemowy. Aluminiowe okucia i kuliste narożniki chronią każdą krawędź.",
+      "mobility.p3.h": "Drogą, koleją lub samolotem",
+      "mobility.p3.p": "Ochronna wyściółka piankowa wewnątrz skrzyni klasy koncertowej pozwala na bezpieczny transport samochodem, pociągiem lub samolotem.",
+      "models.tag": "Modele w ofercie", "models.h2": "Trzy symulatory. Jedna filozofia plug-in.",
+      "models.p": "Wybierz model, aby zobaczyć jego broszurę — każdy SIMBOX trafia do Ciebie jako kompletny, gotowy na wydarzenie pakiet.",
+      "models.tab1.tag": "Kokpit rajdowo-wyścigowy plug-in", "models.tab2.tag": "Platforma wyścigowa z pełnym ruchem", "models.tab3.tag": "Symulator lotu z platformą ruchu",
+      "models.spec.length": "Długość skrzyni", "models.spec.width": "Szerokość skrzyni", "models.spec.height": "Wysokość skrzyni", "models.spec.weight": "Waga",
+      "models.includedLbl": "Co zawiera zestaw", "models.customBadge": "W pełni konfigurowalny",
+      "models.customNote": "<strong>W pełni konfigurowalny</strong> — każdy komponent można wymienić lub ulepszyć zgodnie z charakterem wydarzenia i budżetem.",
+      "models.rally.h": "Kokpit rajdowy typu wszystko-w-jednym",
+      "models.rally.desc": "Oryginalny SIMBOX: kompletny symulator rajdowy zapakowany w skrzynię klasy koncertowej. Kierownica MOZA R5 Direct Drive, pedały z czujnikami obciążenia, hamulec ręczny w stylu hydraulicznego i zakrzywiony ekran OLED 39″ — podłącz zasilanie i graj.",
+      "models.rally.dolly1": "(194,5 z wózkiem)", "models.rally.dolly2": "(101,5 z wózkiem)", "models.rally.dolly3": "(139 z wózkiem)",
+      "models.rally.i1": "Profesjonalny fotel wyścigowy Playseat", "models.rally.i2": "Zestaw MOZA R5 Direct Drive",
+      "models.rally.i3": "Pedały MOZA SR-P Lite", "models.rally.i4": "Hamulec ręczny MOZA HBP",
+      "models.rally.i5": "Kierownica MOZA ES + moduł 12″", "models.rally.i6": "Zakrzywiony wyświetlacz OLED LG 39″",
+      "models.rally.i7": "Komputer gamingowy — RTX 4060 Ti", "models.rally.i8": "Soundbar Creative",
+      "models.rally.i9": "Klawiatura Logitech + organizacja okablowania",
+      "models.motion.h": "Poczuj każdy wybój, drift i skok",
+      "models.motion.desc": "Profesjonalna platforma ruchu 6-DOF połączona z fotelem wyścigowym Sparco i zakrzywionym wyświetlaczem. Każde przyspieszenie, krawężnik i zmiana nawierzchni przekłada się na realny ruch — prawdziwy magnes na tłumy na każdym wydarzeniu.",
+      "models.motion.dolly": "(151,5 z wózkiem)",
+      "models.motion.i1": "Platforma ruchu DOF Reality 6-DOF", "models.motion.i2": "Fotel wyścigowy Sparco PRO 2000",
+      "models.motion.i3": "Kierownica MOZA Direct Drive", "models.motion.i4": "Zestaw pedałów z czujnikami obciążenia",
+      "models.motion.i5": "4-punktowe pasy bezpieczeństwa", "models.motion.i7": "Komputer gamingowy — RTX 4070", "models.motion.i8": "System dźwięku przestrzennego",
+      "models.flight.h": "Wystartuj prosto z hali targowej",
+      "models.flight.desc": "Platforma ruchu skonfigurowana do lotnictwa: drążek i przepustnica HOTAS, pedały steru kierunku oraz szeroki, zakrzywiony wyświetlacz. Od samolotów pasażerskich po myśliwce — pełne wrażenia lotu wszędzie tam, gdzie odbywa się Twoje wydarzenie.",
+      "models.flight.dolly": "(149,5 z wózkiem)",
+      "models.flight.i3": "Drążek i przepustnica HOTAS", "models.flight.i4": "Pedały steru kierunku",
+      "models.flight.i5": "Panel przyrządów lotniczych", "models.flight.i8": "Zestaw słuchawkowy lotniczy",
+      "branding.tag": "Branding na zamówienie", "branding.h2": "Twoja marka na każdej powierzchni",
+      "branding.p": "Każdy SIMBOX budujemy na zamówienie — i brandujemy na zamówienie. Zamieniamy symulator w mobilny billboard Twojej firmy, od skrzyni transportowej po ekrany w grze.",
+      "branding.b1.h": "Pełne oklejenie folią", "branding.b1.p": "Skrzynia, rama i osłona monitora oklejone w Twoich kolorach i logotypach — zaprojektowane przez nasze studio, zatwierdzone przez Ciebie.",
+      "branding.b2.h": "Brandowane ekrany i nakładki", "branding.b2.p": "Autorska animacja startowa, motyw menu, tablica wyników i nakładki w grze niosące Twoją identyfikację na każdym kroku.",
+      "branding.b3.h": "Autorskie akcenty kolorystyczne", "branding.b3.p": "Przeszycia fotela, podświetlenie RGB, malowane proszkowo elementy ramy — dopasowane do Twojej księgi znaku.",
+      "branding.b4.h": "Grawerowane i drukowane panele", "branding.b4.p": "Grawerowane laserowo tabliczki z logo i drukowane panele skrzyni — wykończenie, które przetrwa lata w trasie.",
+      "branding.imgTag": "Przykład: skrzynia z brandingiem na zamówienie",
+      "invest.tag": "Case study · Inwestycja", "invest.h2": "Symulator, który sam na siebie zarabia",
+      "invest.p": "SIMBOX to nie tylko eksponat — to inwentarz do wynajmu. Agencje eventowe pobierają wysokie stawki dzienne za aktywacje symulatorów. Sprawdź, jak szybko zwróci się Twój.",
+      "invest.quote": "“Zarezerwowaliśmy SIMBOX Rally na 34 wydarzenia w pierwszym roku — targi, premiery produktów, dni integracyjne. Zwrócił się przed dziewiątym miesiącem.”",
+      "invest.who": "— Agencja eventowa, Warszawa · SIMBOX Rally, sezon 2025 <em>(przykładowe case study)</em>",
+      "invest.stat1": "wydarzeń w pierwszym roku", "invest.stat2": "śr. stawka dzienna", "invest.stat2val": "6 000 zł",
+      "invest.stat3": "do zwrotu inwestycji", "invest.stat3val": "9 mies.", "invest.stat4": "ROI w pierwszym roku",
+      "invest.calcH": "Policz to dla siebie", "invest.purchasePrice": "Cena zakupu:",
+      "invest.sliderLbl": "Twoja stawka wynajmu za dzień", "invest.perDay": "/ dzień eventu",
+      "invest.zoneHigh": "Duży popyt", "invest.zoneMarket": "Stawka rynkowa", "invest.zonePremium": "Premium",
+      "invest.out1": "wynajmów do zwrotu", "invest.perMonth": "/ mies.", "invest.out2": "szac. rezerwacji w tej cenie",
+      "invest.out3": "szac. czas zwrotu", "invest.out4": "szac. zysk netto w 1. roku",
+      "invest.note": "* Przykładowe wyliczenie z poglądowymi cenami. Założenie dot. rezerwacji: popyt spada płynnie z ok. 6 wynajmów/mies. przy niższej cenie do ok. 3,5 przy cenie premium. Rzeczywiste wyniki zależą od Twojego rynku, sprzedaży i sezonu. Podane ceny zakupu są przykładowe — skontaktuj się, aby otrzymać wycenę.",
+      "invest.financeH": "Finansowanie dostępne przez EFL",
+      "invest.financeP": "Nie musisz kupować SIMBOX-a od razu za gotówkę. We współpracy z EFL (Grupa Crédit Agricole) oferujemy leasing i raty — tak, aby przychody z wynajmu pokrywały miesięczne raty już od pierwszego dnia.",
+      "invest.fp1": "Leasing i plany ratalne", "invest.fp2": "Szybka, prosta decyzja finansowa", "invest.fp3": "Warunki dopasowane do Twojej firmy",
+      "invest.financeCta": "Zapytaj o finansowanie",
+      "faq.h2": "Najczęściej zadawane pytania",
+      "faq.q1": "Czym jest SIMBOX?",
+      "faq.a1": "SIMBOX to kompletny symulator wyścigowy lub lotniczy typu plug-in, zabudowany w skrzyni transportowej klasy koncertowej. Kierownica, pedały, fotel wyścigowy, zakrzywiony wyświetlacz, komputer gamingowy i system nagłośnienia są fabrycznie zmontowane i okablowane — wystarczy podłączyć zasilanie i grać. Został zaprojektowany na targi, aktywacje marek, premiery produktów i wydarzenia sim racingowe.",
+      "faq.q2": "Jakie modele SIMBOX są dostępne?",
+      "faq.a2": "Cztery modele: SIMBOX Rally (kokpit rajdowy plug-in), SIMBOX F1 (kokpit w stylu formuły), SIMBOX Motion (platforma wyścigowa z pełnym ruchem na bazie 3/4-DOF) oraz SIMBOX Flight (symulator lotu z pełnym ruchem i sterowaniem HOTAS). Każda konfiguracja jest w pełni konfigurowalna — komponenty można wymieniać lub ulepszać zgodnie z charakterem wydarzenia i budżetem.",
+      "faq.q3": "Ile trwa montaż na wydarzeniu?",
+      "faq.a3": "Minuty, nie godziny. Symulator dociera zmontowany wewnątrz skrzyni — na miejscu nie ma okablowania ani konfiguracji. Otwierasz skrzynię, podłączasz jedno zasilanie i system jest gotowy do pracy.",
+      "faq.q4": "Jak transportowany jest SIMBOX?",
+      "faq.a4": "Zamknięta skrzynia mieści się w standardowym busie L2H1 i jeździ na zdejmowanym wózku z płozami. Aluminiowe okucia, kuliste narożniki i wewnętrzna pianka ochronna zapewniają bezpieczny transport drogą, koleją lub samolotem — zbudowana jest w tym samym standardzie co sprzęt koncertowy do tras.",
+      "faq.q5": "Czy SIMBOX można oznaczyć identyfikacją mojej firmy?",
+      "faq.a5": "Tak. Oferujemy pełny branding na zamówienie: oklejenie folią skrzyni i ramy, brandowane ekrany startowe i nakładki w grze, tablice wyników z Twoim logo, autorskie akcenty kolorystyczne oraz panele grawerowane laserowo — wszystko zaprojektowane zgodnie z Twoją księgą znaku.",
+      "faq.q6": "Czy dostępne jest finansowanie lub leasing?",
+      "faq.a6": "Tak. We współpracy z EFL (Grupa Crédit Agricole) oferujemy leasing i plany ratalne z warunkami dopasowanymi do Twojej firmy, dzięki czemu możesz rozłożyć koszt w czasie, podczas gdy symulator zarabia na wynajmie.",
+      "faq.q7": "Czy SIMBOX może zarabiać jako sprzęt do wynajmu?",
+      "faq.a7": "Wielu właścicieli wynajmuje swój SIMBOX agencjom eventowym i markom. Rynkowe stawki dzienne za symulatory eventowe wahają się zwykle od kilkuset do kilku tysięcy złotych za dzień eventu, w zależności od modelu i rynku — nasz kalkulator na stronie pozwala oszacować zwrot inwestycji dla Twojej własnej ceny.",
+      "contact.tag": "Kontakt", "contact.h2": "Zabierz SIMBOX na swoje kolejne wydarzenie",
+      "contact.sub": "Opowiedz nam o swoich targach, premierze lub wydarzeniu sim racingowym — resztą się zajmiemy.",
+      "form.name": "Imię i nazwisko", "form.company": "Firma", "form.companyPh": "Twoja firma",
+      "form.email": "Email", "form.phone": "Telefon", "form.interest": "Interesuje mnie", "form.notSure": "Jeszcze nie wiem",
+      "form.message": "Wiadomość", "form.messagePh": "Opowiedz nam o swoim wydarzeniu — data, lokalizacja, publiczność…",
+      "form.send": "Wyślij wiadomość", "form.sending": "Wysyłanie…",
+      "form.thanks": "Dziękujemy! Odezwiemy się wkrótce.",
+      "form.thanksSent": "Dziękujemy! Twoja wiadomość została wysłana — odezwiemy się wkrótce.",
+      "form.errorMsg": "Coś poszło nie tak — napisz do nas bezpośrednio na contact@simboxpro.com.",
+      "common.downloadBrochure": "Pobierz broszurę",
+      "footer.copy": "© 2026 SIMBOXPRO — Kompletne rozwiązanie plug-in na targi i wydarzenia sim racingowe",
+      "footer.cookieSettings": "Ustawienia cookies",
+      "cookie.text": "Korzystamy z niezbędnego local storage do działania strony oraz opcjonalnych plików cookie analitycznych (Google Analytics), aby sprawdzić jak korzystają z niej odwiedzający. Analityka ładuje się tylko po Twojej zgodzie. <a href=\"mailto:contact@simboxpro.com\">Masz pytania? Napisz do nas.</a>",
+      "cookie.accept": "Akceptuję", "cookie.decline": "Odrzuć",
+      "meta.title": "SIMBOXPRO — Symulatory wyścigowe i lotnicze plug-in na wydarzenia"
+    }
+  };
+
+  function plMonthWord(n) {
+    if (n === 1) return "miesiąc";
+    const mod10 = n % 10, mod100 = n % 100;
+    if (mod10 >= 2 && mod10 <= 4 && !(mod100 >= 12 && mod100 <= 14)) return "miesiące";
+    return "miesięcy";
+  }
+  function monthWord(lang, n) {
+    return lang === "pl" ? plMonthWord(n) : (n === 1 ? "month" : "months");
+  }
+
+  let currentLang = localStorage.getItem("simboxpro-lang") || "en";
+
+  function applyLang(lang) {
+    currentLang = lang;
+    document.documentElement.lang = lang;
+    const dict = I18N[lang];
+    document.querySelectorAll("[data-i18n]").forEach((el) => {
+      const key = el.getAttribute("data-i18n");
+      if (dict[key] !== undefined) el.textContent = dict[key];
+    });
+    document.querySelectorAll("[data-i18n-html]").forEach((el) => {
+      const key = el.getAttribute("data-i18n-html");
+      if (dict[key] !== undefined) el.innerHTML = dict[key];
+    });
+    document.querySelectorAll("[data-i18n-placeholder]").forEach((el) => {
+      const key = el.getAttribute("data-i18n-placeholder");
+      if (dict[key] !== undefined) el.placeholder = dict[key];
+    });
+    document.querySelectorAll(".lang-toggle button").forEach((b) => {
+      b.classList.toggle("active", b.dataset.lang === lang);
+    });
+    document.title = dict["meta.title"];
+    localStorage.setItem("simboxpro-lang", lang);
+    if (typeof calcUpdate === "function") calcSyncCurrency();
+  }
+
+  document.querySelectorAll(".lang-toggle button").forEach((btn) => {
+    btn.addEventListener("click", () => applyLang(btn.dataset.lang));
+  });
+
   // navbar border on scroll
   const nav = document.getElementById("nav");
   addEventListener("scroll", () => nav.classList.toggle("scrolled", scrollY > 20), { passive: true });
@@ -1664,12 +1964,18 @@
     });
   });
 
-  // ROI calculator
+  // ROI calculator — currency follows the active language (EUR for EN, PLN for PL)
   const calcSlider = document.getElementById("calcSlider");
   const calcModels = document.querySelectorAll("#calcModels button");
+  const CURRENCY = {
+    en: { min: 500, max: 4000, step: 50, symbol: "€", format: (n) => "€" + n.toLocaleString("en-US") },
+    pl: { min: 2000, max: 17000, step: 200, symbol: "zł", format: (n) => n.toLocaleString("pl-PL") + " zł" }
+  };
   let calcPrice = 34900;
 
-  const fmtEur = (n) => "€" + n.toLocaleString("en-US");
+  function activeModelBtn() {
+    return [...calcModels].find((b) => b.classList.contains("active")) || calcModels[0];
+  }
 
   // bookings/month falls smoothly from 6 (budget pricing) to 3.5 (premium),
   // so monthly revenue — and payback — always improves as the rate goes up
@@ -1679,30 +1985,49 @@
   }
 
   function calcUpdate() {
+    const cur = CURRENCY[currentLang];
+    const dict = I18N[currentLang];
     const rate = +calcSlider.value;
     const perMonth = calcPerMonth(rate);
-    const events = Math.ceil(calcPrice / rate);
     const payback = Math.ceil(calcPrice / (rate * perMonth));
     const year1 = Math.round(rate * perMonth * 12 - calcPrice);
-    document.getElementById("calcRate").innerHTML = fmtEur(rate) + " <small>/ event day</small>";
-    document.getElementById("calcPrice").textContent = fmtEur(calcPrice);
-    document.getElementById("outEvents").textContent = events;
-    document.getElementById("outMonthly").innerHTML = (Math.round(perMonth * 10) / 10) + " <span>/ month</span>";
-    document.getElementById("outPayback").innerHTML = payback + " <span>month" + (payback === 1 ? "" : "s") + "</span>";
-    document.getElementById("outYear1").textContent = (year1 >= 0 ? "+" : "−") + "€" + Math.round(Math.abs(year1) / 1000) + "k";
+    document.getElementById("calcRate").innerHTML = cur.format(rate) + " <small>" + dict["invest.perDay"] + "</small>";
+    document.getElementById("calcPrice").textContent = cur.format(calcPrice);
+    document.getElementById("outEvents").textContent = Math.ceil(calcPrice / rate);
+    const perMonthRounded = Math.round(perMonth * 10) / 10;
+    const perMonthStr = currentLang === "pl" ? perMonthRounded.toString().replace(".", ",") : perMonthRounded.toString();
+    document.getElementById("outMonthly").innerHTML = perMonthStr + " <span>" + dict["invest.perMonth"] + "</span>";
+    document.getElementById("outPayback").innerHTML = payback + " <span>" + monthWord(currentLang, payback) + "</span>";
+    const sign = year1 >= 0 ? "+" : "−";
+    const kValue = Math.round(Math.abs(year1) / 1000);
+    document.getElementById("outYear1").textContent = currentLang === "pl"
+      ? sign + kValue + " tys. zł"
+      : sign + "€" + kValue + "k";
+  }
+
+  // when the language toggles, rescale the slider + active model's price/rate into the new currency
+  function calcSyncCurrency() {
+    const cur = CURRENCY[currentLang];
+    const btn = activeModelBtn();
+    calcSlider.min = cur.min;
+    calcSlider.max = cur.max;
+    calcSlider.step = cur.step;
+    calcPrice = +btn.dataset[currentLang === "pl" ? "pricePln" : "priceEur"];
+    calcSlider.value = +btn.dataset[currentLang === "pl" ? "ratePln" : "rateEur"];
+    calcUpdate();
   }
 
   calcModels.forEach((btn) => {
     btn.addEventListener("click", () => {
       calcModels.forEach((b) => b.classList.remove("active"));
       btn.classList.add("active");
-      calcPrice = +btn.dataset.price;
-      calcSlider.value = btn.dataset.rate;
+      calcPrice = +btn.dataset[currentLang === "pl" ? "pricePln" : "priceEur"];
+      calcSlider.value = +btn.dataset[currentLang === "pl" ? "ratePln" : "rateEur"];
       calcUpdate();
     });
   });
   calcSlider.addEventListener("input", calcUpdate);
-  calcUpdate();
+  calcSyncCurrency();
 
   // brochure download buttons — placeholder, not wired to files yet
   document.querySelectorAll("[data-brochure]").forEach((btn) => {
@@ -1718,7 +2043,7 @@
     const data = Object.fromEntries(new FormData(contactForm).entries());
     if (data._honey) return; // spam bot filled the honeypot
     btn.disabled = true;
-    btn.textContent = "Sending…";
+    btn.textContent = I18N[currentLang]["form.sending"];
     sent.style.display = "none";
     try {
       const res = await fetch("https://formsubmit.co/ajax/contact@simboxpro.com", {
@@ -1737,15 +2062,18 @@
         })
       });
       if (!res.ok) throw new Error("HTTP " + res.status);
-      sent.textContent = "Thanks! Your message has been sent — we'll get back to you shortly.";
+      sent.textContent = I18N[currentLang]["form.thanksSent"];
       contactForm.reset();
     } catch (err) {
-      sent.textContent = "Something went wrong — please email us directly at contact@simboxpro.com.";
+      sent.textContent = I18N[currentLang]["form.errorMsg"];
     }
     sent.style.display = "inline";
     btn.disabled = false;
-    btn.textContent = "Send message";
+    btn.textContent = I18N[currentLang]["form.send"];
   });
+
+  // apply saved/default language on load (after all i18n-dependent init above is defined)
+  applyLang(currentLang);
 </script>
 
 </body>
